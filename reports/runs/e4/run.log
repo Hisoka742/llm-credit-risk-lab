@@ -1,0 +1,41 @@
+[e4] TF-IDF vocab 71,182, C=0.1 (val AUC by C: {0.03: 0.590685964437427, 0.1: 0.5928959742966655, 0.3: 0.5909572689080186, 1.0: 0.5837388105510224, 3.0: 0.5734271144579556})
+
+==== E4 (TF-IDF + logistic regression on desc only (cheap text baseline)) ====
+Gini train (in-sample)  0.3842
+Gini val (model select) 0.1858
+Gini test               0.1893  [0.1668, 0.2104]
+AUC  test               0.5946  [0.5834, 0.6052]
+Brier test              0.1307  [0.1271, 0.1341]   skill 0.0141
+Mean PD test 0.1621 vs observed 0.1573
+PSI score  train_vs_val 0.0221  train_vs_test 0.0320  val_vs_test 0.0024
+
+Gini by issue quarter (test, periods with n >= min_period_n):
+period     n  defaults   gini  ci_low  ci_high
+2013Q4  4641       714 0.1986  0.1538   0.2453
+2014Q1 15124      2394 0.1871  0.1625   0.2124
+
+Top 15 by importance:
+term
+business       1.484
+bills          1.170
+need           1.158
+help           0.826
+loans          0.709
+and            0.657
+also           0.610
+one payment    0.597
+one            0.569
+00             0.556
+pay of         0.520
+my             0.490
+loans and      0.488
+my bills       0.486
+some           0.485
+
+== E4 vs E0 (paired bootstrap, 1000 resamples, same 19,858 test loans) ==
+Gini  0.1893 vs 0.4166   diff -0.2273  [-0.2528, -0.2022]   P(diff <= 0) = 1.000
+Brier diff +0.0079  [+0.0068, +0.0090]   (negative = e4 better)
+  2013Q4  n=4,641  Gini diff -0.2246  [-0.2784, -0.1750]
+  2014Q1  n=15,124  Gini diff -0.2300  [-0.2588, -0.2005]
+
+Wrote reports\runs\e4/ and reports\figures/e4_*.png

@@ -1,0 +1,15 @@
+{
+  "model": "zai-org/GLM-5.3-Flash",
+  "n": 20,
+  "n_fresh_calls": 2,
+  "n_cached": 18,
+  "n_api_errors": 0,
+  "valid_rate": 1.0,
+  "retry_rate": 0.0,
+  "mean_prompt_tokens": 477.5,
+  "mean_completion_tokens": 73.0,
+  "latency_mean_s": 1.453909499992733,
+  "latency_p50_s": 1.453909499992733,
+  "latency_p95_s": 2.1105239399868876,
+  "concurrency": 8
+}

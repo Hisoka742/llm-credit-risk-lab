@@ -1,0 +1,31 @@
+[embed] 125,700 texts, 116,307 unique, 116,019 to compute on cpu (fp32)
+[embed] 10,000/116,019  29 texts/s  eta 61.4 min
+[embed] 20,000/116,019  27 texts/s  eta 58.5 min
+[embed] 30,000/116,019  30 texts/s  eta 47.2 min
+[embed] 40,000/116,019  34 texts/s  eta 37.8 min
+[embed] 50,000/116,019  36 texts/s  eta 30.3 min
+[embed] 60,000/116,019  39 texts/s  eta 23.9 min
+[embed] 70,000/116,019  41 texts/s  eta 18.6 min
+[embed] 80,000/116,019  44 texts/s  eta 13.7 min
+[embed] 90,000/116,019  46 texts/s  eta 9.4 min
+[embed] 100,000/116,019  48 texts/s  eta 5.5 min
+[embed] 110,000/116,019  50 texts/s  eta 2.0 min
+[embed] 116,019/116,019  51 texts/s  eta 0.0 min
+Token indices sequence length is longer than the specified maximum sequence length for this model (579 > 512). Running this sequence through the model will result in indexing errors
+[embed] wrote data\processed\embeddings\bge-small-en-v1.5.parquet (125700, 384)
+{
+  "model_name": "BAAI/bge-small-en-v1.5",
+  "max_seq_length": 512,
+  "prefix": "",
+  "normalize": true,
+  "batch_size": 64,
+  "device": "cpu",
+  "precision": "fp32",
+  "n_texts": 125700,
+  "n_unique": 116307,
+  "n_computed": 116019,
+  "seconds": 2259.3,
+  "mean_tokens": 45.2529276054097,
+  "share_truncated": 0.0020763723150357995,
+  "texts_per_second": 51.35174611605364
+}

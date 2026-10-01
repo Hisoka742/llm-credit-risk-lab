@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T00:00:00Z",
+  "title": "Design System: LLM Credit Risk Lab",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Listing-Night Ink",
+        "canonical": "oklch(16.3% 0.012 261)",
+        "tonalRamp": ["#090b0e", "#23272c", "#41454b", "#5f636a", "#82868d", "#a3a8af", "#c6cbd2", "#eceff3"]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Raised Ink",
+        "canonical": "oklch(20.9% 0.021 264)",
+        "tonalRamp": ["#080b11", "#212631", "#3f4551", "#5d6370", "#808694", "#a1a8b6", "#c3cbd9", "#eaeff7"]
+      },
+      "paper": {
+        "role": "primary",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(94.4% 0.014 85)",
+        "tonalRamp": ["#0d0b07", "#2a261f", "#49453c", "#67635a", "#8a867d", "#aca79e", "#cfcac0", "#f1eee8"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Paper",
+        "canonical": "oklch(71.7% 0.015 85)",
+        "tonalRamp": ["#0d0b07", "#2a261e", "#49443c", "#67635a", "#8a867c", "#aca79d", "#cfcac0", "#f1eee8"]
+      },
+      "faint": {
+        "role": "neutral",
+        "displayName": "Faint Paper",
+        "canonical": "oklch(63.8% 0.011 82)",
+        "tonalRamp": ["#0d0b08", "#292620", "#48453e", "#66635c", "#8a867f", "#aba7a0", "#cecac2", "#f1eee9"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(241 236 226 / 0.12)",
+        "tonalRamp": [
+          "rgb(241 236 226 / 0.04)",
+          "rgb(241 236 226 / 0.07)",
+          "rgb(241 236 226 / 0.10)",
+          "rgb(241 236 226 / 0.12)",
+          "rgb(241 236 226 / 0.25)",
+          "rgb(241 236 226 / 0.28)",
+          "rgb(241 236 226 / 0.45)",
+          "rgb(241 236 226 / 0.60)"
+        ]
+      },
+      "warm": {
+        "role": "secondary",
+        "displayName": "Default Warm",
+        "canonical": "oklch(68.5% 0.206 33)",
+        "tonalRamp": ["#2e0000", "#6b0000", "#950000", "#bc0500", "#e74325", "#ff6a4b", "#ff8f6e", "#ffd0ba"]
+      },
+      "cool": {
+        "role": "secondary",
+        "displayName": "Repayment Cool",
+        "canonical": "oklch(79.3% 0.118 171)",
+        "tonalRamp": ["#001307", "#00361e", "#00583c", "#00785a", "#129d7c", "#48c09d", "#70e4c0", "#bfffe8"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The hero borrower sentence and the closing footer statement. Always with word-spacing 0.14em." },
+      "statement": { "displayName": "Statement", "purpose": "The scroll-lit question paragraph, 24 to 26ch." },
+      "headline": { "displayName": "Headline", "purpose": "One per section, capped between 14 and 20ch." },
+      "title": { "displayName": "Title", "purpose": "Card and list-item headings; 1.75rem from 768px." },
+      "subtitle": { "displayName": "Subtitle", "purpose": "Definition terms, limitation leads, small block headings." },
+      "body-lead": { "displayName": "Body lead", "purpose": "The muted paragraph under a headline, 46 to 62ch." },
+      "body": { "displayName": "Body", "purpose": "Card and list prose, 44 to 58ch; 0.975rem inside cards." },
+      "label": { "displayName": "Label", "purpose": "Captions, card metadata, form labels, navigation links, footnotes." },
+      "caption": { "displayName": "Caption", "purpose": "Axis ticks and chart scale labels in tabular figures." },
+      "mono": { "displayName": "Mono", "purpose": "JSON output, column names, shell commands and file paths only; 12.5px to 14px." }
+    },
+    "shadows": [
+      {
+        "name": "glass",
+        "value": "inset 0 1px 0 rgb(241 236 226 / 0.1), 0 24px 60px -30px rgb(0 0 0 / 0.7)",
+        "purpose": "The frosted card: top-edge highlight plus a deep soft drop. The only shadow in the system."
+      }
+    ],
+    "motion": [
+      { "name": "ease-out-strong", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Every entrance and the button press. Exposed as --ease-out-strong in CSS and EASE_OUT in site/src/lib/motion.ts." },
+      { "name": "reveal", "value": "opacity 0 to 1, translateY 22px to 0, blur 6px to 0; 0.75s; once at 30% in view", "purpose": "Headings and prose entering on scroll." },
+      { "name": "card-enter", "value": "opacity 0 to 1, translateY 28px to 0, scale 0.97 to 1; 0.7s; 60ms stagger", "purpose": "Bento cells. Rail cards use translateX 48px with a 70ms stagger capped at three." },
+      { "name": "data-draw", "value": "scaleX or scaleY 0 to 1; 0.7s to 1s; staggered", "purpose": "Bars, interval lines and split strips drawing from their origin." },
+      { "name": "heat-resolve", "value": "word: opacity, y 0.35em, blur 8px over 0.8s at 55ms stagger; colour: 0.9s ease-out, 0.55s after the word", "purpose": "Hero sentence: words arrive, then the model's reading settles onto them." },
+      { "name": "scroll-light", "value": "opacity 0.16 to 1 per word, tied to scroll progress", "purpose": "The question paragraph lighting as the reader advances." },
+      { "name": "press", "value": "transform scale(0.97) 160ms cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Button active state." },
+      { "name": "state-fade", "value": "background-color, border-color 200ms ease", "purpose": "Hover and focus colour changes on controls." },
+      { "name": "magnetic", "value": "spring stiffness 220, damping 18, mass 0.6; strength 0.28", "purpose": "Primary action leaning toward the cursor. Mouse and pen only." },
+      { "name": "tilt", "value": "rotate up to 3.2deg; spring stiffness 160, damping 18; perspective 1200px", "purpose": "Bento cell tilting toward a mouse pointer." },
+      { "name": "marquee", "value": "translateX 0 to -50%, 70s linear infinite", "purpose": "The phrase strip. Pauses on hover; static and scrollable under reduced motion." },
+      { "name": "smooth-scroll", "value": "Lenis, duration 1.1, anchor offset -72px", "purpose": "Page scrolling and in-page anchors. Not started under reduced motion." },
+      { "name": "calm", "value": "useCalm(): prefers-reduced-motion or ?capture", "purpose": "Single switch every animated component reads. When true: settled content, no Lenis, one static field frame at 60% opacity." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "field-full", "value": "900px" },
+      { "name": "lg", "value": "1024px" }
+    ],
+    "zIndex": [
+      { "name": "field", "value": "0" },
+      { "name": "content", "value": "10" },
+      { "name": "nav", "value": "40" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one primary action in a view. Paper fill on ink, full pill, wrapped in a magnetic lean on fine pointers.",
+      "html": "<a href=\"#\" class=\"ds-btn ds-btn-primary\">Read the study<svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"24\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"40\" y1=\"128\" x2=\"216\" y2=\"128\"/><polyline points=\"144 56 216 128 144 200\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 0.6rem; height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); font-size: 1rem; font-weight: 500; white-space: nowrap; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, border-color 200ms ease; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--color-paper, #f1ece2); outline-offset: 3px; } .ds-btn-primary { background: var(--color-paper, #f1ece2); color: var(--color-ink, #0b0e13); border: none; } @media (hover: hover) and (pointer: fine) { .ds-btn-primary:hover { background: #ffffff; } }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions and form submit. Transparent with a low-alpha paper border.",
+      "html": "<a href=\"#\" class=\"ds-btn-ghost\">See the method</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 0.6rem; height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; border: 1px solid rgb(241 236 226 / 0.28); background: transparent; color: var(--color-paper, #f1ece2); font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); font-size: 1rem; font-weight: 500; white-space: nowrap; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, border-color 200ms ease; } .ds-btn-ghost:active { transform: scale(0.97); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--color-paper, #f1ece2); outline-offset: 3px; } @media (hover: hover) and (pointer: fine) { .ds-btn-ghost:hover { border-color: rgb(241 236 226 / 0.6); background: rgb(241 236 226 / 0.06); } }"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Circular ghost button for rail arrows (3rem) and the phone menu (2.75rem). Always carries an accessible label.",
+      "html": "<button type=\"button\" class=\"ds-btn-icon\" aria-label=\"Next descriptions\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"40\" y1=\"128\" x2=\"216\" y2=\"128\"/><polyline points=\"144 56 216 128 144 200\"/></svg></button>",
+      "css": ".ds-btn-icon { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; padding: 0; border-radius: 999px; border: 1px solid rgb(241 236 226 / 0.28); background: transparent; color: var(--color-paper, #f1ece2); cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, border-color 200ms ease; } .ds-btn-icon:active { transform: scale(0.97); } .ds-btn-icon:focus-visible { outline: 2px solid var(--color-paper, #f1ece2); outline-offset: 3px; } @media (hover: hover) and (pointer: fine) { .ds-btn-icon:hover { border-color: rgb(241 236 226 / 0.6); background: rgb(241 236 226 / 0.06); } }"
+    },
+    {
+      "name": "Glass Card",
+      "kind": "card",
+      "refersTo": "card-glass",
+      "description": "Frosted container over the field for a genuinely contained unit: bento cells, listing cards, code blocks. The only shadowed surface.",
+      "html": "<div class=\"ds-glass\"><h3 class=\"ds-glass-title\">Every difference is paired</h3><p class=\"ds-glass-body\">Both models are scored on the same 1,000 resampled test sets, so shared sampling noise cancels and only the difference remains.</p><p class=\"ds-glass-foot\">Embeddings vs baseline: +0.0043 Gini, interval -0.0017 to +0.0102.</p></div>",
+      "css": ".ds-glass { max-width: 28rem; padding: 2rem; border-radius: 20px; border: 1px solid rgb(241 236 226 / 0.1); background: linear-gradient(160deg, rgb(241 236 226 / 0.07), rgb(241 236 226 / 0.025)); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); box-shadow: inset 0 1px 0 rgb(241 236 226 / 0.1), 0 24px 60px -30px rgb(0 0 0 / 0.7); color: var(--color-paper, #f1ece2); font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); } .ds-glass-title { margin: 0; font-family: var(--font-display, 'Clash Display', 'Satoshi', system-ui, sans-serif); font-size: 1.75rem; font-weight: 500; line-height: 1.25; letter-spacing: -0.015em; word-spacing: 0.14em; } .ds-glass-body { margin: 0.75rem 0 0; max-width: 52ch; font-size: 0.975rem; line-height: 1.625; color: var(--color-muted, #a8a399); } .ds-glass-foot { margin: 1.25rem 0 0; font-size: 0.875rem; font-variant-numeric: tabular-nums lining-nums; color: rgb(241 236 226 / 0.85); } @media (prefers-reduced-transparency: reduce) { .ds-glass { background: var(--color-ink-2, #131822); backdrop-filter: none; -webkit-backdrop-filter: none; } }"
+    },
+    {
+      "name": "Listing Card",
+      "kind": "custom",
+      "refersTo": "card-glass",
+      "description": "Signature. A real borrower description with heat-tinted words, the outcome, and the JSON the model returned, in a glass card on the horizontal rail.",
+      "html": "<article class=\"ds-listing\"><p class=\"ds-listing-meta\"><span>2008, grade D</span><span class=\"ds-listing-out\">Charged off</span></p><p class=\"ds-listing-text\">Borrowing <span style=\"color: rgb(252, 137, 110)\">money</span> at a <span style=\"color: rgb(140, 221, 192)\">fixed</span> <span style=\"color: rgb(250, 152, 128)\">monthly payment</span> would the <span style=\"color: rgb(250, 160, 138)\">answer</span> to my prayers.</p><pre class=\"ds-listing-json\"><code>{\n  <span class=\"ds-k\">\"loan_purpose_category\"</span>: <span class=\"ds-v\">\"debt_consolidation\"</span>,\n  <span class=\"ds-k\">\"financial_stress\"</span>: <span class=\"ds-v\">2</span>,\n  <span class=\"ds-k\">\"mentions_other_debts\"</span>: <span class=\"ds-v\">true</span>\n}</code></pre></article>",
+      "css": ".ds-listing { width: min(86vw, 30rem); padding: 1.75rem; border-radius: 20px; border: 1px solid rgb(241 236 226 / 0.1); background: linear-gradient(160deg, rgb(241 236 226 / 0.07), rgb(241 236 226 / 0.025)); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); box-shadow: inset 0 1px 0 rgb(241 236 226 / 0.1), 0 24px 60px -30px rgb(0 0 0 / 0.7); color: var(--color-paper, #f1ece2); font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); } .ds-listing-meta { display: flex; align-items: center; justify-content: space-between; margin: 0; font-size: 0.875rem; font-variant-numeric: tabular-nums lining-nums; color: var(--color-muted, #a8a399); } .ds-listing-out { color: var(--color-warm, #ff5a3c); } .ds-listing-text { margin: 1.25rem 0 0; font-size: 1.05rem; line-height: 1.6; } .ds-listing-json { margin: 1.5rem 0 0; padding-top: 1.25rem; border-top: 1px solid var(--color-line, rgb(241 236 226 / 0.12)); overflow-x: auto; font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace); font-size: 12.5px; line-height: 1.7; color: var(--color-muted, #a8a399); } .ds-k { color: var(--color-faint, #8f8b84); } .ds-v { color: var(--color-paper, #f1ece2); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Label above, 12px-radius field with a low-alpha paper border, helper sentence below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-from\">Your name</label><input class=\"ds-input\" id=\"ds-from\" type=\"text\" autocomplete=\"name\" /><p class=\"ds-field-help\">Opens your mail app with the message filled in.</p></div>",
+      "css": ".ds-field { max-width: 36rem; font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); color: var(--color-paper, #f1ece2); } .ds-field-label { font-size: 0.875rem; font-weight: 500; } .ds-input { display: block; width: 100%; margin-top: 0.5rem; padding: 0.75rem 1rem; border-radius: 12px; border: 1px solid rgb(241 236 226 / 0.25); background: rgb(241 236 226 / 0.04); color: var(--color-paper, #f1ece2); font: inherit; caret-color: var(--color-paper, #f1ece2); transition: border-color 200ms ease; } .ds-input:hover { border-color: rgb(241 236 226 / 0.45); } .ds-input:focus { border-color: var(--color-paper, #f1ece2); } .ds-input:focus-visible { outline: 2px solid var(--color-paper, #f1ece2); outline-offset: 3px; } .ds-field-help { margin: 0.5rem 0 0; font-size: 0.875rem; color: var(--color-muted, #a8a399); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Fixed 4rem bar: product name in the display face, four muted section links. Shown in its scrolled, frosted state.",
+      "html": "<header class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-name\">LLM Credit Risk Lab</a><nav aria-label=\"Sections\"><ul class=\"ds-nav-list\"><li><a href=\"#\" class=\"ds-nav-link\">Voices</a></li><li><a href=\"#\" class=\"ds-nav-link\">Method</a></li><li><a href=\"#\" class=\"ds-nav-link\">Results</a></li><li><a href=\"#\" class=\"ds-nav-link\">Limits</a></li></ul></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 4rem; padding: 0 2.5rem; border-bottom: 1px solid var(--color-line, rgb(241 236 226 / 0.12)); background: rgb(11 14 19 / 0.8); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); color: var(--color-paper, #f1ece2); font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); } .ds-nav-name { font-family: var(--font-display, 'Clash Display', 'Satoshi', system-ui, sans-serif); font-size: 1.125rem; font-weight: 500; word-spacing: 0.14em; color: inherit; text-decoration: none; } .ds-nav-list { display: flex; align-items: center; gap: 0.25rem; margin: 0; padding: 0; list-style: none; font-size: 0.875rem; } .ds-nav-link { padding: 0.5rem 0.875rem; border-radius: 999px; color: var(--color-muted, #a8a399); text-decoration: none; transition: color 200ms ease; } .ds-nav-link:hover { color: var(--color-paper, #f1ece2); } .ds-nav-link:focus-visible, .ds-nav-name:focus-visible { outline: 2px solid var(--color-paper, #f1ece2); outline-offset: 3px; }"
+    },
+    {
+      "name": "Interval Row",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Signature. Results row: experiment id and label, a paper interval line with its estimate dot over hairline gridlines, and the same numbers as text.",
+      "html": "<div class=\"ds-irow\"><p class=\"ds-irow-name\"><span class=\"ds-irow-id\">E1</span><span class=\"ds-irow-label\">Tabular + embeddings</span></p><div class=\"ds-irow-plot\" aria-hidden=\"true\"><span class=\"ds-irow-tick\" style=\"left:0%\"></span><span class=\"ds-irow-tick\" style=\"left:25%\"></span><span class=\"ds-irow-tick\" style=\"left:50%\"></span><span class=\"ds-irow-tick\" style=\"left:75%\"></span><span class=\"ds-irow-tick\" style=\"left:100%\"></span><span class=\"ds-irow-line\" style=\"left:75.7%;right:14.9%\"></span><span class=\"ds-irow-dot\" style=\"left:80.2%\"></span></div><p class=\"ds-irow-val\"><span class=\"ds-irow-num\">0.421</span><span class=\"ds-irow-ci\">0.403 to 0.440</span></p></div>",
+      "css": ".ds-irow { display: grid; grid-template-columns: 15rem 1fr 11rem; align-items: center; column-gap: 1.5rem; padding: 1.25rem 0; border-top: 1px solid var(--color-line, rgb(241 236 226 / 0.12)); border-bottom: 1px solid var(--color-line, rgb(241 236 226 / 0.12)); color: var(--color-paper, #f1ece2); font-family: var(--font-sans, 'Satoshi', system-ui, sans-serif); font-variant-numeric: tabular-nums lining-nums; } .ds-irow-name, .ds-irow-val { margin: 0; } .ds-irow-id { font-size: 1.125rem; font-weight: 700; } .ds-irow-label { margin-left: 0.75rem; color: var(--color-muted, #a8a399); } .ds-irow-plot { position: relative; height: 2rem; } .ds-irow-tick { position: absolute; top: 0; width: 1px; height: 100%; background: var(--color-line, rgb(241 236 226 / 0.12)); } .ds-irow-line { position: absolute; top: 50%; height: 3px; transform: translateY(-50%); border-radius: 999px; background: var(--color-paper, #f1ece2); } .ds-irow-dot { position: absolute; top: 50%; width: 14px; height: 14px; transform: translate(-50%, -50%); border-radius: 999px; border: 2px solid var(--color-ink, #0b0e13); background: var(--color-paper, #f1ece2); } .ds-irow-val { font-size: 0.875rem; } .ds-irow-num { font-size: 1rem; font-weight: 500; } .ds-irow-ci { margin-left: 0.5rem; color: var(--color-muted, #a8a399); }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-block",
+      "description": "Glass card holding real commands or real model output in the mono face. Scrolls horizontally rather than wrapping.",
+      "html": "<pre class=\"ds-code\"><code>python -m scripts.prepare_data\npython -m scripts.run_experiment --config configs/e0.yaml\npython -m scripts.make_report</code></pre>",
+      "css": ".ds-code { margin: 0; padding: 1.25rem; overflow-x: auto; border-radius: 20px; border: 1px solid rgb(241 236 226 / 0.1); background: linear-gradient(160deg, rgb(241 236 226 / 0.07), rgb(241 236 226 / 0.025)); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%); box-shadow: inset 0 1px 0 rgb(241 236 226 / 0.1), 0 24px 60px -30px rgb(0 0 0 / 0.7); font-family: var(--font-mono, 'JetBrains Mono', ui-monospace, monospace); font-size: 13px; line-height: 1.9; color: rgb(241 236 226 / 0.9); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "In Their Own Words",
+    "overview": "The page is built from borrowers' real sentences. Text is the imagery: one borrower sentence set at display scale opens the page, and the model's reading is drawn directly onto the words as colour. Behind everything sits a fixed field of small motes on a near-black ground, and the field is data too: one mote per loan in the study, positions seeded so it is identical on every load, with the warm share equal to the measured default rate. The hero carries a written key for both the word colours and the field, so nothing coloured or moving is left unexplained.\n\nThe system is quiet so that the one coloured thing on screen can be trusted. Ground, text, borders, charts and buttons are all drawn from two values, near-black ink and warm paper, with paper at reduced alpha doing the work of greys. Density is editorial rather than dashboard: large left-aligned headings, short measures, generous vertical rhythm, and frosted cards only where content is genuinely a contained unit.\n\nMotion follows one grammar. Anything entering uses a single strong ease-out curve (cubic-bezier(0.23, 1, 0.32, 1)) over 0.5 to 1 second, moving by transform, opacity and a short blur only, once per element as it enters view. Two scroll-tied devices carry the story: word-level heat that settles onto the hero sentence after the words arrive, and a paragraph whose words light from 16% to full opacity as the reader advances. Every animated component reads one switch (`useCalm`); when the visitor's system asks for reduced motion, content renders settled, smooth scrolling is not started, and the field draws a single static frame.",
+    "keyCharacteristics": [
+      "Borrower sentences at display scale are the imagery; there are no illustrations or photographs.",
+      "Two values (ink and paper) draw the whole interface; colour appears only as meaning.",
+      "A fixed, seeded WebGL field that is a data plot, explained by a key in the hero.",
+      "Frosted glass cards over the field, flat sections veiled in translucent ink.",
+      "One ease-out curve for every entrance, with a complete static fallback.",
+      "Numbers always present as text in tabular figures, never only in a chart or in 3D."
+    ],
+    "rules": [
+      {
+        "name": "The Meaning-Only Rule",
+        "body": "Warm and cool are a diverging data pair: warm raises predicted default, cool lowers it. They are never used as interface decoration, so a coloured word, bar or dot always says something about risk. Every use is accompanied by a text label or key; colour is never the only carrier.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Accent Rule",
+        "body": "The interface accent is the paper colour itself. Primary actions are paper on ink, focus is a 2px paper outline, selection inverts to paper. No third hue exists for buttons, links or highlights.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paper Chart Rule",
+        "body": "Charts that do not encode risk direction are drawn in paper alone, with series separated by opacity (100%, 60%, 45%, 30%) rather than by hue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Real Artifact Rule",
+        "body": "JetBrains Mono is only for things that are literally code: JSON the model returned, dataframe column names, commands, file paths. Measured numbers in prose, tables and charts are set in Satoshi with tabular lining figures, not in mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Open Word Rule",
+        "body": "Every use of the display face carries word-spacing of 0.14em. Clash Display sets tight word spaces, and with negative tracking they close up at heading sizes.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Weight Rule",
+        "body": "Display type is always weight 500. Hierarchy between display, statement, headline and title is made with size alone.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Raised Surface Rule",
+        "body": "The frosted card is the only shadowed element. Buttons, inputs, navigation and charts are flat and are separated by borders, hairlines or opacity.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Opaque Fallback Rule",
+        "body": "Under `prefers-reduced-transparency`, the frosted card drops its blur and becomes solid Raised Ink.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do reserve warm and cool for risk direction, and put a text label or key next to every use.",
+      "Do use paper for every interface accent: primary fill, focus outline, selection, monochrome data marks.",
+      "Do set measured numbers in Satoshi with tabular lining figures, and give every chart value as text beside or below the chart.",
+      "Do keep the three radii by role: 20px cards, full-pill controls, 12px inputs.",
+      "Do add word-spacing of 0.14em wherever the display face is used.",
+      "Do use the single ease-out curve (0.23, 1, 0.32, 1) for entrances, once per element, and route every animation through `useCalm` so reduced motion gets settled content.",
+      "Do open each section directly with its headline, left-aligned on the content edge, with the measure capped in `ch`.",
+      "Do show unfinished results as a dashed faint mark with a plain sentence, never as a placeholder number."
+    ],
+    "donts": [
+      "Don't use warm or cool for buttons, links, borders, highlights or any other decoration.",
+      "Don't introduce a third hue; greys are paper at reduced alpha or the muted and faint tiers.",
+      "Don't set running numbers, labels or headings in the mono face; it is for JSON, column names, commands and paths.",
+      "Don't put a shadow on anything but the frosted card.",
+      "Don't animate layout properties for entrances; move with transform, opacity and blur, and let state changes fade colour only.",
+      "Don't add moving or coloured elements to the field that do not correspond to data, or show the field without its key.",
+      "Don't hide content behind an animation that may not run; everything is visible by default."
+    ]
+  }
+}

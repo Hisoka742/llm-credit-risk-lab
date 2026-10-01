@@ -1,0 +1,47 @@
+[e0] 72 features (9 categorical); dropped 32 constant/all-missing in train
+0:	test: 0.6378082	best: 0.6378082 (0)	total: 253ms	remaining: 12m 37s
+250:	test: 0.7007289	best: 0.7007353 (249)	total: 26.9s	remaining: 4m 54s
+500:	test: 0.7031398	best: 0.7032260 (492)	total: 56.3s	remaining: 4m 40s
+750:	test: 0.7035621	best: 0.7035961 (739)	total: 1m 26s	remaining: 4m 18s
+1000:	test: 0.7041031	best: 0.7042216 (977)	total: 1m 57s	remaining: 3m 54s
+1250:	test: 0.7044177	best: 0.7045327 (1118)	total: 2m 25s	remaining: 3m 23s
+Stopped by overfitting detector  (200 iterations wait)
+
+bestTest = 0.7045327142
+bestIteration = 1118
+
+Shrink model to first 1119 iterations.
+
+==== E0 (CatBoost on tabular features only (baseline)) ====
+best iteration 1118, fit 156s
+Gini train (in-sample)  0.5253
+Gini val (model select) 0.4091
+Gini test               0.4166  [0.3982, 0.4354]
+AUC  test               0.7083  [0.6991, 0.7177]
+Brier test              0.1228  [0.1192, 0.1263]   skill 0.0738
+Mean PD test 0.1538 vs observed 0.1573
+PSI score  train_vs_val 0.0028  train_vs_test 0.0024  val_vs_test 0.0012
+
+Gini by issue quarter (test, periods with n >= min_period_n):
+period     n  defaults   gini  ci_low  ci_high
+2013Q4  4641       714 0.4232  0.3849   0.4630
+2014Q1 15124      2394 0.4171  0.3941   0.4394
+
+Top 15 by importance:
+int_rate                         10.183
+grade                             6.357
+annual_inc                        5.241
+term                              5.163
+purpose                           3.713
+acc_open_past_24mths              3.333
+loan_to_income                    3.248
+inq_last_6mths                    3.208
+credit_history_months             3.199
+revol_bal                         2.919
+revol_util                        2.719
+installment_to_monthly_income     2.474
+addr_state                        2.276
+fico_mid                          2.114
+emp_length                        1.972
+
+Wrote reports\runs\e0/ and reports\figures/e0_*.png

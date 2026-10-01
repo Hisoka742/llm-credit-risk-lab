@@ -1,0 +1,7 @@
+inherits: base.yaml
+
+experiment:
+  name: e3
+  description: "E0 + embeddings + LLM features"
+  feature_sets: [tabular, embeddings, llm]
+  baseline: e0              # paired bootstrap vs this run's test predictions

@@ -1,0 +1,8 @@
+{
+  "seedKey": "9086e820",
+  "rounds": [
+    { "round": 0, "command": "concept-seed --scope direction --mode persuade", "source": "api", "assignedIndex": 6, "assigned": "The Credit Committee File", "answer": { "optionId": "reroll", "register": "bolder" } },
+    { "round": 1, "command": "concept-seed --scope direction --mode persuade --from 9086e820 --reroll 1 --register bolder", "source": "degraded (roll service unreachable, no challengers, bolder register unavailable)", "assignedIndex": 5, "assigned": "In Their Own Words", "answer": { "optionId": "assigned", "buildPath": "code", "buildPathFlipped": false } }
+  ],
+  "note": "Recorded from the concept-seed and serve-question outputs of the build session. The re-roll ran degraded; the user was told."
+}

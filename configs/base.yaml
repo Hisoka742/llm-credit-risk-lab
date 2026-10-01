@@ -1,0 +1,74 @@
+# Shared settings. Experiment configs (e0..e4) inherit this file, so split, seeds and
+# CatBoost settings are identical across experiments by construction.
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  raw_file: null            # null -> auto-detect `data.raw_glob` under raw_dir
+  processed: data/processed/loans.parquet
+  reports_dir: reports
+  cache_dir: cache
+
+data:
+  raw_glob: "accepted_2007_to_2018*.csv*"
+  chunksize: 200000         # rows per CSV chunk; the full file does not fit comfortably in RAM as str
+  min_desc_chars: 1         # keep rows whose cleaned `desc` has at least this many characters
+
+split:
+  # Out-of-time split on issue month. Boundaries snap to whole months so that no
+  # issue month is shared between two splits.
+  time_col: issue_d
+  train_frac: 0.70
+  val_frac: 0.15            # test gets the remainder (~0.15)
+
+catboost:
+  iterations: 3000
+  learning_rate: 0.03
+  depth: 6
+  l2_leaf_reg: 3.0
+  eval_metric: AUC
+  early_stopping_rounds: 200  # on the validation split, never on test
+  thread_count: -1
+
+embeddings:
+  model_name: BAAI/bge-small-en-v1.5
+  max_seq_length: 512       # model maximum; only 0.2% of descriptions are longer
+  prefix: ""                # bge: no instruction for documents; e5 would need "passage: "
+  normalize: true
+  fp16: true                # only applied on CUDA
+  batch_size: 64
+  n_components: 32          # PCA (centered SVD) fit on train only
+
+llm:
+  base_url: null            # null -> LLM_BASE_URL env; the Kaggle notebook passes its local vLLM URL
+  # Study model (CLAUDE.md): Qwen2.5-7B-Instruct, AWQ 4-bit so it fits one Kaggle T4 in fp16.
+  # Served by vLLM in notebooks/kaggle_e2_llm_extract.ipynb. Other backends: configs/llm_*.yaml.
+  model: Qwen/Qwen2.5-7B-Instruct-AWQ
+  api_key_env: LLM_API_KEY
+  temperature: 0.0
+  max_tokens: 256           # the JSON answer is ~80 tokens
+  max_retries: 1            # invalid JSON -> retry once (error fed back), then null
+  json_mode: true           # response_format=json_object; set false if the server rejects it
+  timeout_s: 60
+  concurrency: 8            # parallel requests; vLLM batches them on the GPU
+  max_rpm: null             # client-side rate cap; hosted APIs set it in their profile
+  max_desc_chars: 4000      # cost cap; 99% of descriptions are under ~1,200 chars
+  sample_size: null         # null -> all rows; otherwise a fixed seeded sample shared by E2/E3
+  usd_per_1m_input: null    # set for hosted APIs to get $/application in the cost table
+  usd_per_1m_output: null
+  extra_body: null          # provider-specific request fields (see configs/llm_baseten_glm.yaml)
+
+tfidf:                      # E4 text-only baseline
+  ngram_range: [1, 2]
+  min_df: 5
+  max_features: 100000
+  C_grid: [0.03, 0.1, 0.3, 1.0, 3.0]  # chosen on validation AUC
+
+shap:
+  max_rows: 5000            # test rows used for SHAP (exact TreeSHAP)
+
+eval:
+  n_bootstrap: 1000
+  ci: 0.95
+  calibration_bins: 10
+  min_period_n: 500         # periods with fewer loans get counts only, no Gini

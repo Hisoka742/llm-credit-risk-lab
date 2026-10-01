@@ -1,0 +1,7 @@
+inherits: base.yaml
+
+experiment:
+  name: e2
+  description: "E0 + LLM-extracted structured features from desc"
+  feature_sets: [tabular, llm]
+  baseline: e0              # paired bootstrap vs this run's test predictions

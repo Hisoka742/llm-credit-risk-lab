@@ -1,0 +1,179 @@
+@import "tailwindcss";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "lenis/dist/lenis.css";
+
+/*
+  Tokens. One ground, one text colour, and a diverging data pair that is used ONLY for
+  meaning: warm = raises predicted default, cool = lowers it. The UI itself never uses
+  them as decoration, so a coloured word always says something about risk.
+*/
+@theme {
+  --color-ink: #0b0e13;
+  --color-ink-2: #131822;
+  --color-paper: #f1ece2;
+  --color-muted: #a8a399;
+  --color-faint: #8f8b84;
+  --color-line: rgb(241 236 226 / 0.12);
+  --color-warm: #ff5a3c;
+  --color-cool: #5fd4b1;
+
+  --font-display: "Clash Display", "Satoshi", system-ui, sans-serif;
+  --font-sans: "Satoshi", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Strong ease-out: responsive on entry, settles softly. */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* z-index scale: field 0, content 10, nav 40. Nothing else is layered. */
+
+html {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scrollbar-color: rgb(241 236 226 / 0.22) var(--color-ink);
+  scrollbar-width: thin;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: clip;
+  caret-color: var(--color-paper);
+}
+
+::selection {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-paper);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(241 236 226 / 0.2);
+  border-radius: 999px;
+  border: 2px solid var(--color-ink);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Clash Display sets very tight word spaces; with negative tracking they close up at heading
+   sizes, so every use of the display face gets its spaces back. */
+.font-display {
+  word-spacing: 0.14em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@layer components {
+  /* Radius system: cards 20px, controls full pill, inputs 12px. */
+  .glass {
+    border-radius: 20px;
+    border: 1px solid rgb(241 236 226 / 0.1);
+    background: linear-gradient(160deg, rgb(241 236 226 / 0.07), rgb(241 236 226 / 0.025));
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    box-shadow:
+      inset 0 1px 0 rgb(241 236 226 / 0.1),
+      0 24px 60px -30px rgb(0 0 0 / 0.7);
+  }
+
+  /* Horizontal rail whose first item lines up with the page's content edge at any width. */
+  .rail {
+    --rail-edge: max(1.25rem, calc((100vw - 1400px) / 2 + 1.25rem));
+    padding-inline: var(--rail-edge);
+    scroll-padding-inline: var(--rail-edge);
+  }
+  @media (min-width: 768px) {
+    .rail {
+      --rail-edge: max(2.5rem, calc((100vw - 1400px) / 2 + 2.5rem));
+    }
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    height: 3.25rem;
+    padding: 0 1.6rem;
+    border-radius: 999px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+      transform 160ms var(--ease-out-strong),
+      background-color 200ms ease,
+      border-color 200ms ease;
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .btn-primary {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  .btn-ghost {
+    border: 1px solid rgb(241 236 226 / 0.28);
+    color: var(--color-paper);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-primary:hover {
+      background: #ffffff;
+    }
+    .btn-ghost:hover {
+      border-color: rgb(241 236 226 / 0.6);
+      background: rgb(241 236 226 / 0.06);
+    }
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: var(--color-ink-2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Marquee: constant motion, so linear. Pauses on hover and stops under reduced motion. */
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  animation: marquee 70s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+}

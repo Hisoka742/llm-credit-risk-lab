@@ -1,0 +1,13 @@
+# Alternative LLM backend profile: Baseten Model APIs (hosted), zai-org/GLM-5.3-Flash.
+#   python -m scripts.llm_extract --config configs/llm_baseten_glm.yaml --n 20 --show
+# Needs LLM_BASE_URL=https://inference.baseten.co/v1 and LLM_API_KEY in .env.
+# To run E2/E3 on these features instead of Qwen, set llm.model to this model in base.yaml.
+inherits: e2.yaml
+
+llm:
+  model: zai-org/GLM-5.3-Flash
+  # GLM is a reasoning model. With thinking on it spends ~130 hidden tokens per call. The
+  # same switch is required for DeepSeek-V4-Flash, which otherwise runs out of max_tokens.
+  extra_body: {chat_template_kwargs: {enable_thinking: false}}
+  max_rpm: 14               # account limit: 15 requests/min (x-ratelimit-limit-requests)
+  concurrency: 4

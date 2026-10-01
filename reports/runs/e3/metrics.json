@@ -1,0 +1,436 @@
+{
+  "experiment": "e3",
+  "description": "E0 + embeddings + LLM features",
+  "config": "configs/e3.yaml",
+  "llm_sample": false,
+  "model": "catboost",
+  "seed": 42,
+  "dropped_constant_in_train": [
+    "all_util",
+    "annual_inc_joint",
+    "application_type",
+    "disbursement_method",
+    "dti_joint",
+    "il_util",
+    "inq_fi",
+    "inq_last_12m",
+    "max_bal_bc",
+    "mths_since_rcnt_il",
+    "open_acc_6m",
+    "open_act_il",
+    "open_il_12m",
+    "open_il_24m",
+    "open_rv_12m",
+    "open_rv_24m",
+    "policy_code",
+    "revol_bal_joint",
+    "sec_app_chargeoff_within_12_mths",
+    "sec_app_collections_12_mths_ex_med",
+    "sec_app_fico_range_high",
+    "sec_app_fico_range_low",
+    "sec_app_inq_last_6mths",
+    "sec_app_mort_acc",
+    "sec_app_mths_since_last_major_derog",
+    "sec_app_num_rev_accts",
+    "sec_app_open_acc",
+    "sec_app_open_act_il",
+    "sec_app_revol_util",
+    "total_bal_il",
+    "total_cu_tl",
+    "verification_status_joint"
+  ],
+  "embeddings": {
+    "model": "BAAI/bge-small-en-v1.5",
+    "dim": 384,
+    "n_components": 32,
+    "explained_variance_ratio_total": 0.5887665152549744
+  },
+  "llm": {
+    "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+    "n_features": 8,
+    "null_rate": 0.00031026252983290536
+  },
+  "n_features": 112,
+  "features": [
+    "loan_amnt",
+    "funded_amnt",
+    "term",
+    "int_rate",
+    "installment",
+    "grade",
+    "sub_grade",
+    "emp_length",
+    "home_ownership",
+    "annual_inc",
+    "verification_status",
+    "purpose",
+    "addr_state",
+    "dti",
+    "delinq_2yrs",
+    "fico_range_low",
+    "inq_last_6mths",
+    "mths_since_last_delinq",
+    "mths_since_last_record",
+    "open_acc",
+    "pub_rec",
+    "revol_bal",
+    "revol_util",
+    "total_acc",
+    "initial_list_status",
+    "collections_12_mths_ex_med",
+    "mths_since_last_major_derog",
+    "acc_now_delinq",
+    "tot_coll_amt",
+    "tot_cur_bal",
+    "total_rev_hi_lim",
+    "acc_open_past_24mths",
+    "avg_cur_bal",
+    "bc_open_to_buy",
+    "bc_util",
+    "chargeoff_within_12_mths",
+    "delinq_amnt",
+    "mo_sin_old_il_acct",
+    "mo_sin_old_rev_tl_op",
+    "mo_sin_rcnt_rev_tl_op",
+    "mo_sin_rcnt_tl",
+    "mort_acc",
+    "mths_since_recent_bc",
+    "mths_since_recent_bc_dlq",
+    "mths_since_recent_inq",
+    "mths_since_recent_revol_delinq",
+    "num_accts_ever_120_pd",
+    "num_actv_bc_tl",
+    "num_actv_rev_tl",
+    "num_bc_sats",
+    "num_bc_tl",
+    "num_il_tl",
+    "num_op_rev_tl",
+    "num_rev_accts",
+    "num_rev_tl_bal_gt_0",
+    "num_sats",
+    "num_tl_120dpd_2m",
+    "num_tl_30dpd",
+    "num_tl_90g_dpd_24m",
+    "num_tl_op_past_12m",
+    "pct_tl_nvr_dlq",
+    "percent_bc_gt_75",
+    "pub_rec_bankruptcies",
+    "tax_liens",
+    "tot_hi_cred_lim",
+    "total_bal_ex_mort",
+    "total_bc_limit",
+    "total_il_high_credit_limit",
+    "credit_history_months",
+    "fico_mid",
+    "loan_to_income",
+    "installment_to_monthly_income",
+    "emb_pc_00",
+    "emb_pc_01",
+    "emb_pc_02",
+    "emb_pc_03",
+    "emb_pc_04",
+    "emb_pc_05",
+    "emb_pc_06",
+    "emb_pc_07",
+    "emb_pc_08",
+    "emb_pc_09",
+    "emb_pc_10",
+    "emb_pc_11",
+    "emb_pc_12",
+    "emb_pc_13",
+    "emb_pc_14",
+    "emb_pc_15",
+    "emb_pc_16",
+    "emb_pc_17",
+    "emb_pc_18",
+    "emb_pc_19",
+    "emb_pc_20",
+    "emb_pc_21",
+    "emb_pc_22",
+    "emb_pc_23",
+    "emb_pc_24",
+    "emb_pc_25",
+    "emb_pc_26",
+    "emb_pc_27",
+    "emb_pc_28",
+    "emb_pc_29",
+    "emb_pc_30",
+    "emb_pc_31",
+    "llm_loan_purpose_category",
+    "llm_financial_stress",
+    "llm_employment_stability",
+    "llm_mentions_other_debts",
+    "llm_mentions_job_loss_or_income_drop",
+    "llm_mentions_medical_or_family_emergency",
+    "llm_has_repayment_plan",
+    "llm_text_quality"
+  ],
+  "categorical": [
+    "term",
+    "grade",
+    "sub_grade",
+    "emp_length",
+    "home_ownership",
+    "verification_status",
+    "purpose",
+    "addr_state",
+    "initial_list_status",
+    "llm_loan_purpose_category",
+    "llm_employment_stability"
+  ],
+  "best_iteration": 650,
+  "shap_llm": {
+    "n_rows": 5000,
+    "llm_share_of_total_abs_shap": 0.052353239277299624,
+    "ranks": {
+      "llm_loan_purpose_category": 27,
+      "llm_financial_stress": 35,
+      "llm_employment_stability": 101,
+      "llm_mentions_other_debts": 103,
+      "llm_mentions_job_loss_or_income_drop": 109,
+      "llm_mentions_medical_or_family_emergency": 50,
+      "llm_has_repayment_plan": 52,
+      "llm_text_quality": 8
+    },
+    "mean_abs_shap": {
+      "llm_loan_purpose_category": 0.024164507724511078,
+      "llm_financial_stress": 0.016836679710824157,
+      "llm_employment_stability": 0.0012180332088864024,
+      "llm_mentions_other_debts": 0.001069400380264021,
+      "llm_mentions_job_loss_or_income_drop": 0.0001502302814065638,
+      "llm_mentions_medical_or_family_emergency": 0.009558878643721827,
+      "llm_has_repayment_plan": 0.008876623728086968,
+      "llm_text_quality": 0.047358856817076564
+    }
+  },
+  "fit_seconds": 119.3,
+  "n": {
+    "train": 88697,
+    "val": 17145,
+    "test": 19858
+  },
+  "default_rate": {
+    "train": 0.15636380035401423,
+    "val": 0.15071449402158063,
+    "test": 0.1572665928089435
+  },
+  "gini": {
+    "train_in_sample": 0.512408180659891,
+    "val_used_for_model_selection": 0.4124634849909734,
+    "test": {
+      "value": 0.4202606584856077,
+      "ci_low": 0.40179515527407716,
+      "ci_high": 0.43951942448881903,
+      "n_boot": 1000
+    }
+  },
+  "auc_test": {
+    "value": 0.7101303292428038,
+    "ci_low": 0.7008975776370385,
+    "ci_high": 0.7197597122444095,
+    "n_boot": 1000
+  },
+  "brier_test": {
+    "value": 0.12233558679471446,
+    "ci_low": 0.11899164308418606,
+    "ci_high": 0.12562598886406623,
+    "n_boot": 1000
+  },
+  "brier_skill_test": 0.07694809858515861,
+  "mean_pd_test": 0.1556700203582638,
+  "psi_score": {
+    "train_vs_val": 0.0013683510924122808,
+    "train_vs_test": 0.0009795815206510088,
+    "val_vs_test": 0.0009185962667173777
+  },
+  "gini_by_quarter_test": [
+    {
+      "period": "2013Q4",
+      "n": 4641,
+      "defaults": 714,
+      "gini": 0.41772502227272357,
+      "ci_low": 0.3793069882358197,
+      "ci_high": 0.4573776734118853
+    },
+    {
+      "period": "2014Q1",
+      "n": 15124,
+      "defaults": 2394,
+      "gini": 0.4232209877928652,
+      "ci_low": 0.40050672210526506,
+      "ci_high": 0.445197416590339
+    },
+    {
+      "period": "2014Q2",
+      "n": 47,
+      "defaults": 10,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2014Q3",
+      "n": 2,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2014Q4",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q1",
+      "n": 9,
+      "defaults": 2,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q2",
+      "n": 12,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q3",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q4",
+      "n": 7,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q1",
+      "n": 5,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q2",
+      "n": 5,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q3",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    }
+  ],
+  "calibration_test": [
+    {
+      "n": 1986,
+      "mean_pred": 0.03663682616232192,
+      "observed": 0.03625377643504532
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.05975953632627684,
+      "observed": 0.0553877139979859
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.07986715775467,
+      "observed": 0.08257804632426989
+    },
+    {
+      "n": 1985,
+      "mean_pred": 0.09966022932654495,
+      "observed": 0.08816120906801007
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.12136611854567919,
+      "observed": 0.11681772406847936
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.14575332966202992,
+      "observed": 0.1500503524672709
+    },
+    {
+      "n": 1985,
+      "mean_pred": 0.17554550609903136,
+      "observed": 0.1853904282115869
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.21222559937339344,
+      "observed": 0.22104733131923465
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.2620882288140424,
+      "observed": 0.26938569989929506
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.36377947700440266,
+      "observed": 0.3675730110775428
+    }
+  ],
+  "vs_e0": {
+    "split": "test",
+    "n": 19858,
+    "gini_base": 0.41660479258861915,
+    "gini_new": 0.4202606584856077,
+    "gini_diff": {
+      "diff": 0.0036558658969885194,
+      "ci_low": -0.0025477269537377283,
+      "ci_high": 0.009976537357098197,
+      "p_value_one_sided": 0.131,
+      "n_boot": 1000
+    },
+    "brier_diff": {
+      "diff": -0.0004148697551885211,
+      "ci_low": -0.0008160276492197595,
+      "ci_high": 2.119665294358564e-06,
+      "p_value_one_sided": 0.972,
+      "n_boot": 1000
+    },
+    "gini_diff_by_quarter": [
+      {
+        "period": "2013Q4",
+        "n": 4641,
+        "diff": -0.005478127079709072,
+        "ci_low": -0.01842413100285351,
+        "ci_high": 0.007174405590131167,
+        "p_value_one_sided": 0.802,
+        "n_boot": 1000
+      },
+      {
+        "period": "2014Q1",
+        "n": 15124,
+        "diff": 0.006137430510027464,
+        "ci_low": -0.0011637297589157905,
+        "ci_high": 0.0136952844542572,
+        "p_value_one_sided": 0.059,
+        "n_boot": 1000
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "n_shards": 1,
+  "n_fresh_calls": 58023,
+  "n_api_errors": 0,
+  "retry_rate": 0.0009306654257794323,
+  "mean_prompt_tokens": 452.9474001688985,
+  "mean_completion_tokens": 82.76080175102976,
+  "latency_mean_s": 29.354139802712844,
+  "latency_p50_s": 29.307125821000227,
+  "latency_p95_s": 31.67017345240238,
+  "concurrency": 64,
+  "hardware": "1 x Kaggle T4, vLLM 0.6.6.post1, AWQ 4-bit fp16, prefix caching",
+  "wall_seconds": 26620.4,
+  "throughput_per_s": 2.179643285408852,
+  "accelerator_seconds_per_application": 0.4587904796373852,
+  "n": 125700,
+  "valid_rate": 0.9996897374701671
+}

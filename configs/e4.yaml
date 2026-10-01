@@ -1,0 +1,8 @@
+inherits: base.yaml
+
+experiment:
+  name: e4
+  description: "TF-IDF + logistic regression on desc only (cheap text baseline)"
+  feature_sets: [tfidf]
+  model: tfidf_logreg
+  baseline: e0

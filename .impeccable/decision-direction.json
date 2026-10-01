@@ -1,0 +1,131 @@
+{
+  "title": "Choose the visual world for the LLM Credit Risk Lab showcase",
+  "question": "The roll assigned The Credit Committee File. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Credit Committee File",
+      "kicker": "THE ROLL",
+      "lineage": "bank credit-committee loan files: tabbed dossier, memo header, rubber-stamped decision",
+      "thesis": "The study is brought before a credit committee, and every feature set gets a stamped decision.",
+      "palette": ["#0B1312", "#E9E4D8", "#D9472B", "#3E9E80", "#7C857F"],
+      "materials": ["frosted vellum sheets (the brief's glass, translated)", "rubber-stamp ink", "file tabs and memo rules"],
+      "viewport": "Dark committee table; a vellum cover sheet states the question over a live field of 125,700 loan motes; the headline result carries a stamp: NOT PROVEN, p = 0.079; primary action opens the file.",
+      "risk": "Stamps and tabs turn into costume the moment they stop carrying real verdicts.",
+      "raised": [
+        { "from": "digital-design-canon-console-dashboard-atmosphere", "raise": "The hero field is real data: one seeded mote per loan, colored by outcome, drifting under the cursor." },
+        { "from": "signals-instruments-darkroom-safelight-bay", "raise": "Test-set numbers develop once, after the method is read; only the stamped verdict appears above the fold." },
+        { "from": "operate-c-depot-blind-courses", "raise": "Numbers snap digit by digit, never glide; the unfinished E2/E3 file shows a visibly incomplete stamp." },
+        { "from": "textiles-weave-drape-fashion-memory-quilt-atlas", "raise": "Every number carries its provenance seam: the metrics.json path it came from." },
+        { "from": "ink-pigment-printmaking-mezzotint-velvet-night", "raise": "One ground, hierarchy by light only: vellum brightness, never a second arbitrary dark." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "The Validation Dossier",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "independent model-validation reports (SR 11-7 style): exhibits, findings, effective challenge",
+      "thesis": "The study as an independent validation report: numbered exhibits, severity-rated findings, challenge.",
+      "palette": ["#0E1012", "#ECEAE4", "#9AA0A6", "#C2412D"],
+      "materials": ["bond-paper sheets on dark", "exhibit numbering", "finding severity chips"],
+      "viewport": "Exhibit 1 fills the hero: the paired-bootstrap interval for E1 minus E0 against zero, with its finding beside it.",
+      "risk": "The most familiar reading for this audience, and where most runs land; can read like a PDF."
+    },
+    {
+      "id": "challenger-console",
+      "label": "Console Void",
+      "verdict": "declined",
+      "lineage": "sixth-generation console system menus",
+      "thesis": "Experiments as monoliths in fog, loans as drifting motes, the chosen one glowing amber.",
+      "palette": ["#070B14", "#C9D4E6", "#FFB547"],
+      "materials": ["webgl fog", "particle light", "translucent towers"],
+      "viewport": "A dark room of five glowing towers, E0 to E4, one swelling forward.",
+      "risk": "Reads as game nostalgia to a bank risk team.",
+      "case": "Fuses well technically but loses on audience identification and on reading the numbers.",
+      "kept": "Its real-data particle field became the hero of the assigned file.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-console-dashboard-atmosphere-hero.webp"
+    },
+    {
+      "id": "challenger-darkroom",
+      "label": "Darkroom Safelight",
+      "verdict": "declined",
+      "lineage": "photographic printing darkrooms",
+      "thesis": "Results develop under amber safelight; pulling a print early is a real loss.",
+      "palette": ["#1A0E06", "#E9A23B", "#B8B2A6"],
+      "materials": ["amber safelight", "test strips", "wet silver prints"],
+      "viewport": "A developing tray where the Gini value emerges from gray.",
+      "risk": "Amber monochrome makes interval charts hard to read.",
+      "case": "The 'test set is touched once' idea is strong, but bankers do not live in darkrooms.",
+      "kept": "Test numbers develop once, after the method.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-darkroom-safelight-bay-hero.webp"
+    },
+    {
+      "id": "challenger-depot",
+      "label": "Depot Destination Blind",
+      "verdict": "declined",
+      "lineage": "bus destination blinds, dyed duck cloth",
+      "thesis": "Results as cloth courses stepping under one window; a fault stops mid-step.",
+      "palette": ["#12402C", "#F1C41B", "#EDE6D3"],
+      "materials": ["dyed duck cloth", "stitch and punch"],
+      "viewport": "One window showing the current experiment's legend on green cloth.",
+      "risk": "A drenched green monitoring board fights the dark cinematic brief.",
+      "case": "An Operate grammar on a Persuade page; loses both axes.",
+      "kept": "Numbers snap, never glide; unfinished work shows as a visible seam.",
+      "hero": "https://impeccable.style/worlds/cards/operate-c-depot-blind-courses-hero.webp"
+    },
+    {
+      "id": "challenger-quilt",
+      "label": "Memory Quilt Atlas",
+      "verdict": "declined",
+      "lineage": "hand-pieced memory quilts",
+      "thesis": "Each finding a patch with its owner, date, and provenance stitched on.",
+      "palette": ["#5D7896", "#1B1B1B", "#C8321F", "#6B4A2B"],
+      "materials": ["pieced cloth", "stitch rules"],
+      "viewport": "A quilt of unequal patches, one per experiment.",
+      "risk": "Domestic warmth undercuts a model-risk audience.",
+      "case": "Loses both axes.",
+      "kept": "Every number carries its provenance.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-memory-quilt-atlas-hero.webp"
+    },
+    {
+      "id": "challenger-mezzotint",
+      "label": "Mezzotint Velvet Night",
+      "verdict": "declined",
+      "lineage": "mezzotint printmaking",
+      "thesis": "Signal emerges by burnishing light out of total black.",
+      "palette": ["#0A0908", "#E8E6E1", "#6E5540"],
+      "materials": ["rocked velvet black", "burnished silver"],
+      "viewport": "A black plate with the question scraped into light.",
+      "risk": "Beautiful but abstract; the numbers lose their frame.",
+      "case": "Loses both axes.",
+      "kept": "One ground; hierarchy by light only.",
+      "hero": "https://impeccable.style/worlds/cards/ink-pigment-printmaking-mezzotint-velvet-night-hero.webp"
+    },
+    {
+      "id": "challenger-gravity",
+      "label": "Gravity-Rain Garden",
+      "verdict": "declined",
+      "lineage": "surreal impossible gardens",
+      "thesis": "Colored rains obey local gravities across a dusk garden.",
+      "palette": ["#3F4A44", "#3B6FD6", "#C8433A", "#101010"],
+      "materials": ["vector-field rain", "floating ponds"],
+      "viewport": "Rain falling toward five flowers, one per experiment.",
+      "risk": "Whimsy contradicts the measured, audit-grade positioning.",
+      "case": "Loses both axes.",
+      "kept": "Deterministic replay: the particle field is seeded like the experiments.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-gravity-rain-garden-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The brief's own example played straight: obsidian ground, platinum text, one emerald accent, glass bento.",
+    "palette": ["#0D0D0D", "#E5E5E5", "#00FF66"],
+    "materials": ["glassmorphism cards", "particle orb", "neon accent"],
+    "viewport": "Huge value proposition over a morphing glass orb, one glowing CTA.",
+    "risk": "Indistinguishable from every AI-startup landing page."
+  },
+  "steer": true
+}

@@ -1,0 +1,281 @@
+{
+  "experiment": "e4",
+  "description": "TF-IDF + logistic regression on desc only (cheap text baseline)",
+  "config": "configs/e4.yaml",
+  "llm_sample": false,
+  "model": "tfidf_logreg",
+  "seed": 42,
+  "C": 0.1,
+  "val_auc_by_C": {
+    "0.03": 0.590685964437427,
+    "0.1": 0.5928959742966655,
+    "0.3": 0.5909572689080186,
+    "1.0": 0.5837388105510224,
+    "3.0": 0.5734271144579556
+  },
+  "vocab_size": 71182,
+  "top_default_terms": [
+    "business",
+    "bills",
+    "need",
+    "help",
+    "loans",
+    "and",
+    "also",
+    "one payment",
+    "one",
+    "00",
+    "pay of",
+    "my",
+    "loans and",
+    "my bills",
+    "some"
+  ],
+  "top_repay_terms": [
+    "never",
+    "paid off",
+    "mortgage",
+    "two credit",
+    "and have",
+    "year",
+    "cc",
+    "balance",
+    "interest rate",
+    "three years",
+    "but",
+    "an",
+    "ve",
+    "refinance",
+    "the"
+  ],
+  "fit_seconds": 22.0,
+  "n": {
+    "train": 88697,
+    "val": 17145,
+    "test": 19858
+  },
+  "default_rate": {
+    "train": 0.15636380035401423,
+    "val": 0.15071449402158063,
+    "test": 0.1572665928089435
+  },
+  "gini": {
+    "train_in_sample": 0.38419534279904455,
+    "val_used_for_model_selection": 0.18579194859333104,
+    "test": {
+      "value": 0.18929708081591712,
+      "ci_low": 0.16680781039255843,
+      "ci_high": 0.21044676136663729,
+      "n_boot": 1000
+    }
+  },
+  "auc_test": {
+    "value": 0.5946485404079586,
+    "ci_low": 0.5834039051962793,
+    "ci_high": 0.6052233806833186,
+    "n_boot": 1000
+  },
+  "brier_test": {
+    "value": 0.1306665692889684,
+    "ci_low": 0.1271332236725733,
+    "ci_high": 0.13409607645630905,
+    "n_boot": 1000
+  },
+  "brier_skill_test": 0.014088799558139131,
+  "mean_pd_test": 0.1621489078435718,
+  "psi_score": {
+    "train_vs_val": 0.02205103416246103,
+    "train_vs_test": 0.03197569789761212,
+    "val_vs_test": 0.002400948559067334
+  },
+  "gini_by_quarter_test": [
+    {
+      "period": "2013Q4",
+      "n": 4641,
+      "defaults": 714,
+      "gini": 0.19863453402751463,
+      "ci_low": 0.1538158135025015,
+      "ci_high": 0.24525014840890666
+    },
+    {
+      "period": "2014Q1",
+      "n": 15124,
+      "defaults": 2394,
+      "gini": 0.18712347771759852,
+      "ci_low": 0.16250469281836255,
+      "ci_high": 0.21244120286891302
+    },
+    {
+      "period": "2014Q2",
+      "n": 47,
+      "defaults": 10,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2014Q3",
+      "n": 2,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2014Q4",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q1",
+      "n": 9,
+      "defaults": 2,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q2",
+      "n": 12,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q3",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2015Q4",
+      "n": 7,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q1",
+      "n": 5,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q2",
+      "n": 5,
+      "defaults": 1,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    },
+    {
+      "period": "2016Q3",
+      "n": 2,
+      "defaults": 0,
+      "gini": NaN,
+      "ci_low": NaN,
+      "ci_high": NaN
+    }
+  ],
+  "calibration_test": [
+    {
+      "n": 1986,
+      "mean_pred": 0.10002488251826942,
+      "observed": 0.09214501510574018
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.1214496924053127,
+      "observed": 0.10322255790533737
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.13421549953269063,
+      "observed": 0.1283987915407855
+    },
+    {
+      "n": 1985,
+      "mean_pred": 0.14464580991444748,
+      "observed": 0.1350125944584383
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.15428378589491992,
+      "observed": 0.1364551863041289
+    },
+    {
+      "n": 1986,
+      "mean_pred": 0.16372259532429,
+      "observed": 0.16364551863041288
+    },
+    {
+      "n": 2430,
+      "mean_pred": 0.1754012618499381,
+      "observed": 0.18353909465020576
+    },
+    {
+      "n": 1541,
+      "mean_pred": 0.18483162208136883,
+      "observed": 0.19143413367942894
+    },
+    {
+      "n": 1989,
+      "mean_pred": 0.20020699936677205,
+      "observed": 0.2106586224233283
+    },
+    {
+      "n": 1983,
+      "mean_pred": 0.24488532558886209,
+      "observed": 0.22995461422087746
+    }
+  ],
+  "vs_e0": {
+    "split": "test",
+    "n": 19858,
+    "gini_base": 0.41660479258861915,
+    "gini_new": 0.18929708081591712,
+    "gini_diff": {
+      "diff": -0.22730771177270204,
+      "ci_low": -0.25280343916972775,
+      "ci_high": -0.2022220937033939,
+      "p_value_one_sided": 1.0,
+      "n_boot": 1000
+    },
+    "brier_diff": {
+      "diff": 0.007916112739065409,
+      "ci_low": 0.006820103691158193,
+      "ci_high": 0.008992416822429496,
+      "p_value_one_sided": 0.0,
+      "n_boot": 1000
+    },
+    "gini_diff_by_quarter": [
+      {
+        "period": "2013Q4",
+        "n": 4641,
+        "diff": -0.224568615324918,
+        "ci_low": -0.278407391589435,
+        "ci_high": -0.17504496967195107,
+        "p_value_one_sided": 1.0,
+        "n_boot": 1000
+      },
+      {
+        "period": "2014Q1",
+        "n": 15124,
+        "diff": -0.22996007956523923,
+        "ci_low": -0.25881868259728585,
+        "ci_high": -0.20045622965218857,
+        "p_value_one_sided": 1.0,
+        "n_boot": 1000
+      }
+    ]
+  }
+}

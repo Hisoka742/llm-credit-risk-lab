@@ -1,0 +1,40 @@
+{
+  "title": "Choose the visual world for the LLM Credit Risk Lab showcase",
+  "question": "Re-roll dealt In Their Own Words. (The bolder catalog was unreachable, so this is a plain re-roll from grounded candidates.) Keep it, take the alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "In Their Own Words",
+      "kicker": "THE ROLL",
+      "lineage": "2007-2014 peer-to-peer loan listings, where borrowers pitched strangers in free text",
+      "thesis": "The page is built from the borrowers' real sentences, and the model's reading is drawn directly onto them.",
+      "palette": ["#0B0E13", "#F1ECE2", "#FF5A3C", "#5FD4B1", "#4C7DF0"],
+      "materials": ["oversized borrower sentences as the imagery", "word-level heat from the model's coefficients", "frosted listing cards (the brief's glass)"],
+      "viewport": "One real borrower sentence fills the screen at display scale over 125,700 drifting motes; words the model learned raise risk glow warm, words that lower it glow cool; beneath it the measured answer: +0.004 Gini, p = 0.079.",
+      "risk": "Emotional quotes can upstage the rigor if the numbers arrive late, so the verdict sits in the first viewport."
+    },
+    {
+      "id": "model-pick",
+      "label": "The Lorenz Field",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "the CAP / Lorenz curve every credit modeler reads Gini from",
+      "thesis": "Gini as literal geometry: 19,858 test loans sort themselves into the curve, and the area is the result.",
+      "palette": ["#0A0D12", "#E8E6E0", "#F2B33D", "#6C7A89"],
+      "materials": ["a particle-drawn CAP curve", "hairline axes", "area fills as the only color"],
+      "viewport": "Loan motes fall into rank order and draw the E0 curve against the diagonal; the shaded area counts up to 0.417.",
+      "risk": "A chart as hero is the familiar data-portfolio move; the most likely landing for this category."
+    }
+  ],
+  "reroll": true,
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "The brief's own example played straight: obsidian ground, platinum text, one emerald accent, glass bento.",
+    "palette": ["#0D0D0D", "#E5E5E5", "#00FF66"],
+    "materials": ["glassmorphism cards", "particle orb", "neon accent"],
+    "viewport": "Huge value proposition over a morphing glass orb, one glowing CTA.",
+    "risk": "Indistinguishable from every AI-startup landing page."
+  },
+  "steer": true
+}

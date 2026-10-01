@@ -1,0 +1,45 @@
+# Data (large / licensed) — keep folder placeholders only
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Caches: LLM responses and embeddings are reproducible from code + config
+cache/
+.cache/
+
+# Run outputs (metrics.json is small and worth committing; model binaries are not)
+reports/runs/**/*.cbm
+reports/runs/**/*.pkl
+catboost_info/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+kaggle.json
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Showcase site
+site/node_modules/
+site/dist/
+.impeccable/review/
+.impeccable/questions/
+
+# Local agent settings
+.claude/settings.local.json

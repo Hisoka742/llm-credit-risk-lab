@@ -1,0 +1,224 @@
+{
+  "raw_file": "data\\raw\\accepted_2007_to_2018Q4.csv",
+  "nrows_limit": null,
+  "funnel": [
+    {
+      "step": "raw rows",
+      "rows": 2260701
+    },
+    {
+      "step": "valid issue_d",
+      "rows": 2260668
+    },
+    {
+      "step": "finished outcome (target 0/1)",
+      "rows": 1348099
+    },
+    {
+      "step": "non-empty desc (>= 1 chars after cleaning)",
+      "rows": 125700
+    },
+    {
+      "step": "unique id",
+      "rows": 125700
+    }
+  ],
+  "desc_coverage_by_year": [
+    {
+      "year": 2007,
+      "n_loans": 603,
+      "n_with_desc": 588,
+      "n_finished": 603,
+      "n_finished_with_desc": 588,
+      "coverage_all": 0.9751243781094527,
+      "coverage_finished": 0.9751243781094527,
+      "default_rate_with_desc": 0.26360544217687076
+    },
+    {
+      "year": 2008,
+      "n_loans": 2393,
+      "n_with_desc": 2393,
+      "n_finished": 2393,
+      "n_finished_with_desc": 2393,
+      "coverage_all": 1.0,
+      "coverage_finished": 1.0,
+      "default_rate_with_desc": 0.20727120768909318
+    },
+    {
+      "year": 2009,
+      "n_loans": 5281,
+      "n_with_desc": 5025,
+      "n_finished": 5281,
+      "n_finished_with_desc": 5025,
+      "coverage_all": 0.9515243325127817,
+      "coverage_finished": 0.9515243325127817,
+      "default_rate_with_desc": 0.13810945273631842
+    },
+    {
+      "year": 2010,
+      "n_loans": 12537,
+      "n_with_desc": 8285,
+      "n_finished": 12537,
+      "n_finished_with_desc": 8285,
+      "coverage_all": 0.6608439020499322,
+      "coverage_finished": 0.6608439020499322,
+      "default_rate_with_desc": 0.14423657211828605
+    },
+    {
+      "year": 2011,
+      "n_loans": 21721,
+      "n_with_desc": 12723,
+      "n_finished": 21721,
+      "n_finished_with_desc": 12723,
+      "coverage_all": 0.5857465125915013,
+      "coverage_finished": 0.5857465125915013,
+      "default_rate_with_desc": 0.1538159239173151
+    },
+    {
+      "year": 2012,
+      "n_loans": 53367,
+      "n_with_desc": 32743,
+      "n_finished": 53367,
+      "n_finished_with_desc": 32743,
+      "coverage_all": 0.6135439503813218,
+      "coverage_finished": 0.6135439503813218,
+      "default_rate_with_desc": 0.16131692270103534
+    },
+    {
+      "year": 2013,
+      "n_loans": 134814,
+      "n_with_desc": 48730,
+      "n_finished": 134804,
+      "n_finished_with_desc": 48726,
+      "coverage_all": 0.36146097586304093,
+      "coverage_finished": 0.36145811696982283,
+      "default_rate_with_desc": 0.15162336329680254
+    },
+    {
+      "year": 2014,
+      "n_loans": 235629,
+      "n_with_desc": 15274,
+      "n_finished": 223103,
+      "n_finished_with_desc": 15175,
+      "coverage_all": 0.06482224174443722,
+      "coverage_finished": 0.06801791100971301,
+      "default_rate_with_desc": 0.1584843492586491
+    },
+    {
+      "year": 2015,
+      "n_loans": 421095,
+      "n_with_desc": 33,
+      "n_finished": 375546,
+      "n_finished_with_desc": 30,
+      "coverage_all": 7.836711430912265e-05,
+      "coverage_finished": 7.988368934830886e-05,
+      "default_rate_with_desc": 0.06666666666666667
+    },
+    {
+      "year": 2016,
+      "n_loans": 434407,
+      "n_with_desc": 17,
+      "n_finished": 293105,
+      "n_finished_with_desc": 12,
+      "coverage_all": 3.913380769646898e-05,
+      "coverage_finished": 4.094095972433087e-05,
+      "default_rate_with_desc": 0.16666666666666666
+    },
+    {
+      "year": 2017,
+      "n_loans": 443579,
+      "n_with_desc": 0,
+      "n_finished": 169321,
+      "n_finished_with_desc": 0,
+      "coverage_all": 0.0,
+      "coverage_finished": 0.0,
+      "default_rate_with_desc": NaN
+    },
+    {
+      "year": 2018,
+      "n_loans": 495242,
+      "n_with_desc": 0,
+      "n_finished": 56318,
+      "n_finished_with_desc": 0,
+      "coverage_all": 0.0,
+      "coverage_finished": 0.0,
+      "default_rate_with_desc": NaN
+    }
+  ],
+  "splits": [
+    {
+      "split": "train",
+      "rows": 88697,
+      "defaults": 13869,
+      "first_month": "2007-06",
+      "last_month": "2013-07",
+      "share": 0.7056245027844074,
+      "default_rate": 0.15636380035401423
+    },
+    {
+      "split": "val",
+      "rows": 17145,
+      "defaults": 2584,
+      "first_month": "2013-08",
+      "last_month": "2013-11",
+      "share": 0.13639618138424822,
+      "default_rate": 0.15071449402158063
+    },
+    {
+      "split": "test",
+      "rows": 19858,
+      "defaults": 3123,
+      "first_month": "2013-12",
+      "last_month": "2016-08",
+      "share": 0.15797931583134447,
+      "default_rate": 0.1572665928089435
+    }
+  ],
+  "boundaries": {
+    "train_end": "2013-07-01",
+    "val_end": "2013-11-01"
+  },
+  "dropped_leakage_columns": [
+    "funded_amnt_inv",
+    "pymnt_plan",
+    "out_prncp",
+    "out_prncp_inv",
+    "total_pymnt",
+    "total_pymnt_inv",
+    "total_rec_prncp",
+    "total_rec_int",
+    "total_rec_late_fee",
+    "recoveries",
+    "collection_recovery_fee",
+    "last_pymnt_d",
+    "last_pymnt_amnt",
+    "next_pymnt_d",
+    "last_credit_pull_d",
+    "last_fico_range_high",
+    "last_fico_range_low",
+    "hardship_flag",
+    "hardship_type",
+    "hardship_reason",
+    "hardship_status",
+    "deferral_term",
+    "hardship_amount",
+    "hardship_start_date",
+    "hardship_end_date",
+    "payment_plan_start_date",
+    "hardship_length",
+    "hardship_dpd",
+    "hardship_loan_status",
+    "orig_projected_additional_accrued_interest",
+    "hardship_payoff_balance_amount",
+    "hardship_last_payment_amount",
+    "debt_settlement_flag",
+    "debt_settlement_flag_date",
+    "settlement_status",
+    "settlement_date",
+    "settlement_amount",
+    "settlement_percentage",
+    "settlement_term"
+  ],
+  "dropped_unreviewed_columns": [],
+  "n_columns_out": 111
+}

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-credit-risk-lab"
+version = "0.1.0"
+description = "Do LLM-derived features from borrower free text improve a classical PD model?"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyarrow>=14",
+    "pyyaml>=6.0",
+    "scikit-learn>=1.3",
+    "catboost>=1.2",
+    "pydantic>=2.5",
+    "shap>=0.44",
+    "matplotlib>=3.7",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+# Heavy / GPU-oriented extras are split out so E0 installs fast on a CPU laptop.
+embed = ["sentence-transformers>=2.6", "torch>=2.1"]
+llm = ["openai>=1.30"]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+include = ["src*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+# SIM905: whitespace-split column lists are easier to review than 100+ quoted literals.
+ignore = ["SIM905"]
+
+[tool.ruff.lint.per-file-ignores]
+# Notebooks are exploration / Kaggle glue, not library code.
+"notebooks/*" = ["E501", "E402", "E731", "SIM115", "B904"]

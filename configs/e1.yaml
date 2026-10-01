@@ -1,0 +1,7 @@
+inherits: base.yaml
+
+experiment:
+  name: e1
+  description: "E0 + PCA-reduced sentence embeddings of desc"
+  feature_sets: [tabular, embeddings]
+  baseline: e0              # paired bootstrap vs this run's test predictions

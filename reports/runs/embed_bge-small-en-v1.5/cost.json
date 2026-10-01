@@ -1,0 +1,16 @@
+{
+  "model_name": "BAAI/bge-small-en-v1.5",
+  "max_seq_length": 512,
+  "prefix": "",
+  "normalize": true,
+  "batch_size": 64,
+  "device": "cpu",
+  "precision": "fp32",
+  "n_texts": 125700,
+  "n_unique": 116307,
+  "n_computed": 116019,
+  "seconds": 2259.3,
+  "mean_tokens": 45.2529276054097,
+  "share_truncated": 0.0020763723150357995,
+  "texts_per_second": 51.35174611605364
+}

@@ -1,0 +1,1917 @@
+{
+ "funnel": [
+  {
+   "step": "raw rows",
+   "rows": 2260701
+  },
+  {
+   "step": "valid issue_d",
+   "rows": 2260668
+  },
+  {
+   "step": "finished outcome (target 0/1)",
+   "rows": 1348099
+  },
+  {
+   "step": "non-empty desc (>= 1 chars after cleaning)",
+   "rows": 125700
+  },
+  {
+   "step": "unique id",
+   "rows": 125700
+  }
+ ],
+ "coverage_by_year": [
+  {
+   "year": 2007,
+   "loans": 603,
+   "with_desc": 588,
+   "coverage": 0.9751243781094527
+  },
+  {
+   "year": 2008,
+   "loans": 2393,
+   "with_desc": 2393,
+   "coverage": 1.0
+  },
+  {
+   "year": 2009,
+   "loans": 5281,
+   "with_desc": 5025,
+   "coverage": 0.9515243325127817
+  },
+  {
+   "year": 2010,
+   "loans": 12537,
+   "with_desc": 8285,
+   "coverage": 0.6608439020499322
+  },
+  {
+   "year": 2011,
+   "loans": 21721,
+   "with_desc": 12723,
+   "coverage": 0.5857465125915013
+  },
+  {
+   "year": 2012,
+   "loans": 53367,
+   "with_desc": 32743,
+   "coverage": 0.6135439503813218
+  },
+  {
+   "year": 2013,
+   "loans": 134814,
+   "with_desc": 48730,
+   "coverage": 0.36146097586304093
+  },
+  {
+   "year": 2014,
+   "loans": 235629,
+   "with_desc": 15274,
+   "coverage": 0.06482224174443722
+  },
+  {
+   "year": 2015,
+   "loans": 421095,
+   "with_desc": 33,
+   "coverage": 7.836711430912265e-05
+  },
+  {
+   "year": 2016,
+   "loans": 434407,
+   "with_desc": 17,
+   "coverage": 3.913380769646898e-05
+  },
+  {
+   "year": 2017,
+   "loans": 443579,
+   "with_desc": 0,
+   "coverage": 0.0
+  },
+  {
+   "year": 2018,
+   "loans": 495242,
+   "with_desc": 0,
+   "coverage": 0.0
+  }
+ ],
+ "splits": [
+  {
+   "split": "train",
+   "rows": 88697,
+   "defaults": 13869,
+   "first_month": "2007-06",
+   "last_month": "2013-07",
+   "share": 0.7056245027844074,
+   "default_rate": 0.15636380035401423
+  },
+  {
+   "split": "val",
+   "rows": 17145,
+   "defaults": 2584,
+   "first_month": "2013-08",
+   "last_month": "2013-11",
+   "share": 0.13639618138424822,
+   "default_rate": 0.15071449402158063
+  },
+  {
+   "split": "test",
+   "rows": 19858,
+   "defaults": 3123,
+   "first_month": "2013-12",
+   "last_month": "2016-08",
+   "share": 0.15797931583134447,
+   "default_rate": 0.1572665928089435
+  }
+ ],
+ "leakage": {
+  "denied": [
+   {
+    "column": "total_pymnt",
+    "reason": "payments received to date"
+   },
+   {
+    "column": "total_pymnt_inv",
+    "reason": "payments received to date (investor share)"
+   },
+   {
+    "column": "total_rec_prncp",
+    "reason": "principal received to date"
+   },
+   {
+    "column": "total_rec_int",
+    "reason": "interest received to date"
+   },
+   {
+    "column": "total_rec_late_fee",
+    "reason": "late fees received, only non-zero if the borrower was late"
+   },
+   {
+    "column": "recoveries",
+    "reason": "post charge-off recoveries, non-zero only for defaults"
+   },
+   {
+    "column": "collection_recovery_fee",
+    "reason": "post charge-off collection fee"
+   },
+   {
+    "column": "out_prncp",
+    "reason": "outstanding principal at snapshot"
+   },
+   {
+    "column": "out_prncp_inv",
+    "reason": "outstanding principal at snapshot (investor share)"
+   },
+   {
+    "column": "last_pymnt_d",
+    "reason": "date of last payment"
+   },
+   {
+    "column": "last_pymnt_amnt",
+    "reason": "amount of last payment"
+   },
+   {
+    "column": "next_pymnt_d",
+    "reason": "next scheduled payment, empty once the loan is closed"
+   },
+   {
+    "column": "last_credit_pull_d",
+    "reason": "date of most recent bureau pull (servicing)"
+   },
+   {
+    "column": "last_fico_range_high",
+    "reason": "refreshed FICO after issuance, collapses on default"
+   },
+   {
+    "column": "last_fico_range_low",
+    "reason": "refreshed FICO after issuance, collapses on default"
+   },
+   {
+    "column": "funded_amnt_inv",
+    "reason": "investor-funded amount, finalized after listing closes"
+   },
+   {
+    "column": "pymnt_plan",
+    "reason": "payment plan flag set during servicing"
+   },
+   {
+    "column": "hardship_flag",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_type",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_reason",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_status",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_amount",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_start_date",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_end_date",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_length",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_dpd",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_loan_status",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_payoff_balance_amount",
+    "reason": "hardship program"
+   },
+   {
+    "column": "hardship_last_payment_amount",
+    "reason": "hardship program"
+   },
+   {
+    "column": "deferral_term",
+    "reason": "hardship program (no prefix)"
+   },
+   {
+    "column": "payment_plan_start_date",
+    "reason": "hardship program (no prefix)"
+   },
+   {
+    "column": "orig_projected_additional_accrued_interest",
+    "reason": "hardship program (no prefix)"
+   },
+   {
+    "column": "debt_settlement_flag",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "debt_settlement_flag_date",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "settlement_status",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "settlement_date",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "settlement_amount",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "settlement_percentage",
+    "reason": "debt settlement after default"
+   },
+   {
+    "column": "settlement_term",
+    "reason": "debt settlement after default"
+   }
+  ],
+  "n_denied": 39,
+  "n_allowed": 109
+ },
+ "experiments": [
+  {
+   "id": "e0",
+   "label": "Tabular baseline",
+   "status": "done",
+   "source": "reports/runs/e0/metrics.json",
+   "n_features": 72,
+   "gini": {
+    "value": 0.41660479258861915,
+    "ci_low": 0.3981717015225494,
+    "ci_high": 0.4354310616216174,
+    "n_boot": 1000
+   },
+   "auc": {
+    "value": 0.7083023962943096,
+    "ci_low": 0.6990858507612747,
+    "ci_high": 0.7177155308108087,
+    "n_boot": 1000
+   },
+   "brier": {
+    "value": 0.12275045654990298,
+    "ci_low": 0.11924735824209813,
+    "ci_high": 0.12625775085588925,
+    "n_boot": 1000
+   },
+   "brier_skill": 0.0738178048873086,
+   "mean_pd": 0.15382620239244568,
+   "observed": 0.1572665928089435,
+   "psi_train_test": 0.00236327222305602,
+   "calibration": [
+    {
+     "n": 1986,
+     "mean_pred": 0.033756950582384725,
+     "observed": 0.03272910372608258
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.057086724113055536,
+     "observed": 0.05740181268882175
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.07703246825637948,
+     "observed": 0.0755287009063444
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.09633333317220533,
+     "observed": 0.10428211586901763
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.11759983203518375,
+     "observed": 0.11581067472306143
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.14248638137243377,
+     "observed": 0.1555891238670695
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.1727262215982784,
+     "observed": 0.17178841309823678
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.2098305258807832,
+     "observed": 0.22608257804632426
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.26189882893942035,
+     "observed": 0.2769385699899295
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.36949132552215985,
+     "observed": 0.3564954682779456
+    }
+   ],
+   "by_quarter": [
+    {
+     "period": "2013Q4",
+     "n": 4641,
+     "defaults": 714,
+     "gini": 0.42320314935243264,
+     "ci_low": 0.3849466578863004,
+     "ci_high": 0.46298611861910616
+    },
+    {
+     "period": "2014Q1",
+     "n": 15124,
+     "defaults": 2394,
+     "gini": 0.41708355728283775,
+     "ci_low": 0.39407297252930573,
+     "ci_high": 0.4393576491313689
+    }
+   ]
+  },
+  {
+   "id": "e1",
+   "label": "Tabular + embeddings",
+   "status": "done",
+   "source": "reports/runs/e1/metrics.json",
+   "n_features": 104,
+   "gini": {
+    "value": 0.42087653875594233,
+    "ci_low": 0.4028837055662605,
+    "ci_high": 0.4403056969224321,
+    "n_boot": 1000
+   },
+   "auc": {
+    "value": 0.7104382693779712,
+    "ci_low": 0.7014418527831303,
+    "ci_high": 0.7201528484612161,
+    "n_boot": 1000
+   },
+   "brier": {
+    "value": 0.1224191172046385,
+    "ci_low": 0.11901312540812366,
+    "ci_high": 0.12579997304567525,
+    "n_boot": 1000
+   },
+   "brier_skill": 0.07631784122729157,
+   "mean_pd": 0.15669008848642096,
+   "observed": 0.1572665928089435,
+   "psi_train_test": 0.0015683297399375477,
+   "calibration": [
+    {
+     "n": 1986,
+     "mean_pred": 0.03572877010435245,
+     "observed": 0.03474320241691843
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.0585513231335039,
+     "observed": 0.05387713997985901
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.07913717120756966,
+     "observed": 0.08006042296072508
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.09936860463106313,
+     "observed": 0.08816120906801007
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.12154869624136838,
+     "observed": 0.12084592145015106
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.14706364157451537,
+     "observed": 0.1555891238670695
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.17758976174687222,
+     "observed": 0.18387909319899245
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.21485865393779713,
+     "observed": 0.22507552870090636
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.2644770077627285,
+     "observed": 0.26837865055387716
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.36855891524417983,
+     "observed": 0.36203423967774423
+    }
+   ],
+   "by_quarter": [
+    {
+     "period": "2013Q4",
+     "n": 4641,
+     "defaults": 714,
+     "gini": 0.41852962218755607,
+     "ci_low": 0.38015163212580927,
+     "ci_high": 0.45868797700962477
+    },
+    {
+     "period": "2014Q1",
+     "n": 15124,
+     "defaults": 2394,
+     "gini": 0.42376463546927035,
+     "ci_low": 0.40134609389850373,
+     "ci_high": 0.44557192875763524
+    }
+   ],
+   "vs_e0": {
+    "gini": {
+     "diff": 0.004271746167323176,
+     "ci_low": -0.0016901310161512072,
+     "ci_high": 0.010233407759304217,
+     "p_value_one_sided": 0.079,
+     "n_boot": 1000
+    },
+    "brier": {
+     "diff": -0.0003313393452644836,
+     "ci_low": -0.0007457836628844738,
+     "ci_high": 5.661240979839864e-05,
+     "p_value_one_sided": 0.955,
+     "n_boot": 1000
+    },
+    "n": 19858
+   }
+  },
+  {
+   "id": "e2",
+   "label": "Tabular + LLM features",
+   "status": "done",
+   "source": "reports/runs/e2/metrics.json",
+   "n_features": 80,
+   "gini": {
+    "value": 0.4179559483351687,
+    "ci_low": 0.39894983517769483,
+    "ci_high": 0.436906165245403,
+    "n_boot": 1000
+   },
+   "auc": {
+    "value": 0.7089779741675843,
+    "ci_low": 0.6994749175888474,
+    "ci_high": 0.7184530826227015,
+    "n_boot": 1000
+   },
+   "brier": {
+    "value": 0.12247944838689333,
+    "ci_low": 0.11898513989871722,
+    "ci_high": 0.1258191831882505,
+    "n_boot": 1000
+   },
+   "brier_skill": 0.07586262771212382,
+   "mean_pd": 0.15458028075726685,
+   "observed": 0.1572665928089435,
+   "psi_train_test": 0.0021437566365694605,
+   "calibration": [
+    {
+     "n": 1986,
+     "mean_pred": 0.03528005198257139,
+     "observed": 0.033736153071500505
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.05795193683591913,
+     "observed": 0.05639476334340383
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.07814425285136341,
+     "observed": 0.081067472306143
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.09773996815421312,
+     "observed": 0.09420654911838791
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.1188256865950117,
+     "observed": 0.12487411883182276
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.14393936782964592,
+     "observed": 0.13997985901309165
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.1742058706691604,
+     "observed": 0.18337531486146097
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.2117686994920488,
+     "observed": 0.22406847935548843
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.26225210466004867,
+     "observed": 0.2794561933534743
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.36567612997162285,
+     "observed": 0.3554884189325277
+    }
+   ],
+   "by_quarter": [
+    {
+     "period": "2013Q4",
+     "n": 4641,
+     "defaults": 714,
+     "gini": 0.4215625644197072,
+     "ci_low": 0.3832676354929146,
+     "ci_high": 0.46253225163787565
+    },
+    {
+     "period": "2014Q1",
+     "n": 15124,
+     "defaults": 2394,
+     "gini": 0.4194394732576401,
+     "ci_low": 0.3967063080560787,
+     "ci_high": 0.44105203531967857
+    }
+   ],
+   "llm_shap_share": 0.08757023994891212,
+   "vs_e0": {
+    "gini": {
+     "diff": 0.0013511557465495372,
+     "ci_low": -0.0029147584507334674,
+     "ci_high": 0.005651301139859581,
+     "p_value_one_sided": 0.254,
+     "n_boot": 1000
+    },
+    "brier": {
+     "diff": -0.0002710081630096506,
+     "ci_low": -0.0005545754176305927,
+     "ci_high": -1.793173689135101e-05,
+     "p_value_one_sided": 0.98,
+     "n_boot": 1000
+    },
+    "n": 19858
+   }
+  },
+  {
+   "id": "e3",
+   "label": "Tabular + embeddings + LLM",
+   "status": "done",
+   "source": "reports/runs/e3/metrics.json",
+   "n_features": 112,
+   "gini": {
+    "value": 0.4202606584856077,
+    "ci_low": 0.40179515527407716,
+    "ci_high": 0.43951942448881903,
+    "n_boot": 1000
+   },
+   "auc": {
+    "value": 0.7101303292428038,
+    "ci_low": 0.7008975776370385,
+    "ci_high": 0.7197597122444095,
+    "n_boot": 1000
+   },
+   "brier": {
+    "value": 0.12233558679471446,
+    "ci_low": 0.11899164308418606,
+    "ci_high": 0.12562598886406623,
+    "n_boot": 1000
+   },
+   "brier_skill": 0.07694809858515861,
+   "mean_pd": 0.1556700203582638,
+   "observed": 0.1572665928089435,
+   "psi_train_test": 0.0009795815206510088,
+   "calibration": [
+    {
+     "n": 1986,
+     "mean_pred": 0.03663682616232192,
+     "observed": 0.03625377643504532
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.05975953632627684,
+     "observed": 0.0553877139979859
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.07986715775467,
+     "observed": 0.08257804632426989
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.09966022932654495,
+     "observed": 0.08816120906801007
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.12136611854567919,
+     "observed": 0.11681772406847936
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.14575332966202992,
+     "observed": 0.1500503524672709
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.17554550609903136,
+     "observed": 0.1853904282115869
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.21222559937339344,
+     "observed": 0.22104733131923465
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.2620882288140424,
+     "observed": 0.26938569989929506
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.36377947700440266,
+     "observed": 0.3675730110775428
+    }
+   ],
+   "by_quarter": [
+    {
+     "period": "2013Q4",
+     "n": 4641,
+     "defaults": 714,
+     "gini": 0.41772502227272357,
+     "ci_low": 0.3793069882358197,
+     "ci_high": 0.4573776734118853
+    },
+    {
+     "period": "2014Q1",
+     "n": 15124,
+     "defaults": 2394,
+     "gini": 0.4232209877928652,
+     "ci_low": 0.40050672210526506,
+     "ci_high": 0.445197416590339
+    }
+   ],
+   "llm_shap_share": 0.052353239277299624,
+   "vs_e0": {
+    "gini": {
+     "diff": 0.0036558658969885194,
+     "ci_low": -0.0025477269537377283,
+     "ci_high": 0.009976537357098197,
+     "p_value_one_sided": 0.131,
+     "n_boot": 1000
+    },
+    "brier": {
+     "diff": -0.0004148697551885211,
+     "ci_low": -0.0008160276492197595,
+     "ci_high": 2.119665294358564e-06,
+     "p_value_one_sided": 0.972,
+     "n_boot": 1000
+    },
+    "n": 19858
+   }
+  },
+  {
+   "id": "e4",
+   "label": "Text only (TF-IDF)",
+   "status": "done",
+   "source": "reports/runs/e4/metrics.json",
+   "n_features": null,
+   "gini": {
+    "value": 0.18929708081591712,
+    "ci_low": 0.16680781039255843,
+    "ci_high": 0.21044676136663729,
+    "n_boot": 1000
+   },
+   "auc": {
+    "value": 0.5946485404079586,
+    "ci_low": 0.5834039051962793,
+    "ci_high": 0.6052233806833186,
+    "n_boot": 1000
+   },
+   "brier": {
+    "value": 0.1306665692889684,
+    "ci_low": 0.1271332236725733,
+    "ci_high": 0.13409607645630905,
+    "n_boot": 1000
+   },
+   "brier_skill": 0.014088799558139131,
+   "mean_pd": 0.1621489078435718,
+   "observed": 0.1572665928089435,
+   "psi_train_test": 0.03197569789761212,
+   "calibration": [
+    {
+     "n": 1986,
+     "mean_pred": 0.10002488251826942,
+     "observed": 0.09214501510574018
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.1214496924053127,
+     "observed": 0.10322255790533737
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.13421549953269063,
+     "observed": 0.1283987915407855
+    },
+    {
+     "n": 1985,
+     "mean_pred": 0.14464580991444748,
+     "observed": 0.1350125944584383
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.15428378589491992,
+     "observed": 0.1364551863041289
+    },
+    {
+     "n": 1986,
+     "mean_pred": 0.16372259532429,
+     "observed": 0.16364551863041288
+    },
+    {
+     "n": 2430,
+     "mean_pred": 0.1754012618499381,
+     "observed": 0.18353909465020576
+    },
+    {
+     "n": 1541,
+     "mean_pred": 0.18483162208136883,
+     "observed": 0.19143413367942894
+    },
+    {
+     "n": 1989,
+     "mean_pred": 0.20020699936677205,
+     "observed": 0.2106586224233283
+    },
+    {
+     "n": 1983,
+     "mean_pred": 0.24488532558886209,
+     "observed": 0.22995461422087746
+    }
+   ],
+   "by_quarter": [
+    {
+     "period": "2013Q4",
+     "n": 4641,
+     "defaults": 714,
+     "gini": 0.19863453402751463,
+     "ci_low": 0.1538158135025015,
+     "ci_high": 0.24525014840890666
+    },
+    {
+     "period": "2014Q1",
+     "n": 15124,
+     "defaults": 2394,
+     "gini": 0.18712347771759852,
+     "ci_low": 0.16250469281836255,
+     "ci_high": 0.21244120286891302
+    }
+   ],
+   "vs_e0": {
+    "gini": {
+     "diff": -0.22730771177270204,
+     "ci_low": -0.25280343916972775,
+     "ci_high": -0.2022220937033939,
+     "p_value_one_sided": 1.0,
+     "n_boot": 1000
+    },
+    "brier": {
+     "diff": 0.007916112739065409,
+     "ci_low": 0.006820103691158193,
+     "ci_high": 0.008992416822429496,
+     "p_value_one_sided": 0.0,
+     "n_boot": 1000
+    },
+    "n": 19858
+   }
+  }
+ ],
+ "terms": {
+  "raise": [
+   {
+    "term": "business",
+    "coef": 1.4835122983310272
+   },
+   {
+    "term": "bills",
+    "coef": 1.1700972934955458
+   },
+   {
+    "term": "need",
+    "coef": 1.157990384070579
+   },
+   {
+    "term": "help",
+    "coef": 0.8257488593282724
+   },
+   {
+    "term": "loans",
+    "coef": 0.7094639302319825
+   },
+   {
+    "term": "and",
+    "coef": 0.6574539266259904
+   },
+   {
+    "term": "also",
+    "coef": 0.6100057553598774
+   },
+   {
+    "term": "one payment",
+    "coef": 0.59708712765364
+   },
+   {
+    "term": "one",
+    "coef": 0.5693117043759284
+   },
+   {
+    "term": "00",
+    "coef": 0.556413682051933
+   },
+   {
+    "term": "pay of",
+    "coef": 0.520475087058873
+   },
+   {
+    "term": "my",
+    "coef": 0.4900469360841235
+   },
+   {
+    "term": "loans and",
+    "coef": 0.4880837996617843
+   },
+   {
+    "term": "my bills",
+    "coef": 0.4858613185893962
+   }
+  ],
+  "lower": [
+   {
+    "term": "rate",
+    "coef": -1.142010344215589
+   },
+   {
+    "term": "interest",
+    "coef": -0.9740433302528776
+   },
+   {
+    "term": "pool",
+    "coef": -0.9070823691137112
+   },
+   {
+    "term": "apr",
+    "coef": -0.7637423526018622
+   },
+   {
+    "term": "college",
+    "coef": -0.7255760853734033
+   },
+   {
+    "term": "than",
+    "coef": -0.6739243545358933
+   },
+   {
+    "term": "motorcycle",
+    "coef": -0.6422516839826381
+   },
+   {
+    "term": "rates",
+    "coef": -0.6415229199856325
+   },
+   {
+    "term": "off the",
+    "coef": -0.5885344182431076
+   },
+   {
+    "term": "three",
+    "coef": -0.5840603277709895
+   },
+   {
+    "term": "the",
+    "coef": -0.5643272363610063
+   },
+   {
+    "term": "refinance",
+    "coef": -0.5379403374585173
+   },
+   {
+    "term": "ve",
+    "coef": -0.5164546216181773
+   },
+   {
+    "term": "an",
+    "coef": -0.4870644422306447
+   }
+  ]
+ },
+ "word_weights": {
+  "000": 0.0054,
+  "100": -0.2035,
+  "1099": -0.0181,
+  "12": -0.0755,
+  "15": -0.232,
+  "150": 0.1185,
+  "160": -0.0213,
+  "20": 0.0221,
+  "200": -0.206,
+  "2013": 0.0337,
+  "30": -0.0005,
+  "35": -0.112,
+  "400": -0.0259,
+  "401": -0.084,
+  "44": -0.0278,
+  "60": 0.4872,
+  "620": -0.0209,
+  "70": 0.0034,
+  "80": -0.1961,
+  "90": 0.053,
+  "able": 0.0178,
+  "abroad": -0.069,
+  "accounts": 0.2096,
+  "actually": -0.0766,
+  "additional": -0.1008,
+  "administrator": 0.0927,
+  "advice": -0.0022,
+  "affordable": 0.2414,
+  "ago": -0.2299,
+  "annual": -0.2545,
+  "answer": 0.107,
+  "appraisal": -0.0878,
+  "appraiser": 0.0853,
+  "approx": 0.0742,
+  "ask": -0.0103,
+  "assist": 0.1957,
+  "association": 0.0166,
+  "away": 0.0142,
+  "bad": 0.0341,
+  "banks": -0.1627,
+  "beginning": 0.0368,
+  "believe": 0.0603,
+  "best": 0.0896,
+  "big": -0.267,
+  "bills": 1.0148,
+  "bit": 0.0151,
+  "blown": -0.0038,
+  "borrower": -0.0732,
+  "borrowing": -0.1126,
+  "branch": 0.0943,
+  "brighter": -0.0265,
+  "bring": -0.0313,
+  "building": -0.0638,
+  "business": 1.4156,
+  "busy": -0.0035,
+  "buy": -0.0244,
+  "cable": 0.0286,
+  "candidate": 0.048,
+  "capital": 0.5159,
+  "car": 0.0452,
+  "card": -0.4732,
+  "cards": 0.2902,
+  "case": 0.0104,
+  "cent": -0.0393,
+  "center": 0.2298,
+  "change": 0.1219,
+  "child": 0.0238,
+  "clean": 0.0233,
+  "cleared": -0.11,
+  "closed": -0.0612,
+  "closing": 0.2507,
+  "clothing": 0.3714,
+  "club": -0.121,
+  "collapsed": 0.0065,
+  "collect": -0.0071,
+  "comfortable": 0.2506,
+  "companies": -0.0468,
+  "company": 0.0281,
+  "companys": 0.1918,
+  "compared": 0.1151,
+  "computer": -0.0338,
+  "computers": -0.0851,
+  "confidence": 0.0646,
+  "confident": -0.0331,
+  "consider": 0.0626,
+  "consilidation": 0.2074,
+  "consisting": 0.0032,
+  "consolidate": -0.2195,
+  "consolidating": -0.1328,
+  "consolidation": 0.1372,
+  "cost": -0.0919,
+  "costs": -0.0948,
+  "couple": 0.0016,
+  "covers": 0.045,
+  "credit": -0.2267,
+  "crossfit": -0.0377,
+  "current": -0.1285,
+  "currently": -0.3282,
+  "cushion": -0.0519,
+  "date": -0.1313,
+  "day": 0.1469,
+  "days": 0.2696,
+  "debt": 0.1346,
+  "decided": -0.3084,
+  "defaulted": -0.2611,
+  "degree": -0.0991,
+  "did": -0.0098,
+  "discovered": 0.0256,
+  "divorce": 0.2013,
+  "don": -0.2436,
+  "doubled": -0.0513,
+  "eager": -0.0549,
+  "east": -0.0206,
+  "easy": -0.3976,
+  "economy": 0.0591,
+  "effort": -0.0008,
+  "eliminate": 0.2162,
+  "employer": -0.2303,
+  "ended": 0.0093,
+  "energy": 0.0151,
+  "engaged": -0.0428,
+  "engagement": -0.4497,
+  "engineer": -0.1714,
+  "engineering": -0.1057,
+  "entertainment": 0.0195,
+  "entirely": -0.0623,
+  "equipment": 0.3347,
+  "equiptment": 0.0683,
+  "equity": -0.3187,
+  "especially": 0.0281,
+  "estate": -0.0509,
+  "expected": -0.0466,
+  "expenses": -0.1636,
+  "expensive": -0.0408,
+  "explained": 0.0044,
+  "extended": -0.0248,
+  "fact": -0.1109,
+  "family": -0.0495,
+  "fast": -0.0609,
+  "fee": -0.0596,
+  "fees": 0.1866,
+  "finally": -0.408,
+  "finance": -0.3861,
+  "finances": -0.0138,
+  "financial": -0.0766,
+  "fit": -0.2094,
+  "fitness": -0.0464,
+  "fixed": -0.2171,
+  "food": 0.5738,
+  "foreclosure": -0.1124,
+  "forward": -0.0845,
+  "fully": -0.005,
+  "fund": -0.1036,
+  "funded": 0.0329,
+  "funding": 0.079,
+  "funds": 0.107,
+  "furnish": -0.084,
+  "furniture": 0.2157,
+  "future": 0.2138,
+  "generate": 0.0191,
+  "getting": -0.1156,
+  "given": -0.1146,
+  "goal": -0.0097,
+  "goes": -0.0325,
+  "going": 0.1911,
+  "good": 0.1713,
+  "got": -0.275,
+  "graduate": -0.4123,
+  "grateful": -0.0179,
+  "gym": -0.0186,
+  "half": -0.3388,
+  "hard": 0.0961,
+  "having": 0.1102,
+  "headaches": -0.0511,
+  "health": 0.0432,
+  "hello": -0.0789,
+  "help": 0.6738,
+  "high": 0.2097,
+  "hikes": 0.015,
+  "hire": 0.2233,
+  "history": -0.2673,
+  "home": -0.0209,
+  "hope": -0.0184,
+  "hospital": 0.2661,
+  "house": -0.1008,
+  "household": -0.0964,
+  "housing": 0.089,
+  "houston": 0.0781,
+  "ideal": 0.0245,
+  "im": 0.5003,
+  "income": 0.2304,
+  "info": -0.0722,
+  "initial": 0.121,
+  "installment": -0.035,
+  "instill": -0.0168,
+  "insurance": 0.2947,
+  "internet": 0.1543,
+  "ira": -0.1701,
+  "job": -0.1204,
+  "just": 0.229,
+  "know": 0.1096,
+  "larger": 0.0006,
+  "late": -0.1276,
+  "leave": -0.0543,
+  "left": -0.0377,
+  "lenders": 0.0864,
+  "lending": -0.399,
+  "lengthy": -0.0391,
+  "life": 0.115,
+  "like": -0.3047,
+  "lines": 0.0908,
+  "listed": -0.0026,
+  "loan": -0.0367,
+  "loans": 0.7803,
+  "looking": -0.225,
+  "lot": -0.2042,
+  "love": 0.3003,
+  "lower": 0.1085,
+  "lucrative": 0.056,
+  "major": 0.1768,
+  "make": 0.0272,
+  "making": -0.1944,
+  "manageable": -0.0183,
+  "market": -0.0135,
+  "matter": 0.1856,
+  "met": 0.0039,
+  "middle": 0.0703,
+  "min": -0.1051,
+  "misc": 0.2259,
+  "missed": -0.5123,
+  "mom": 0.0392,
+  "money": 0.2624,
+  "month": 0.1168,
+  "monthly": 0.2936,
+  "months": -0.0289,
+  "necessary": 0.3552,
+  "need": 0.9848,
+  "needed": 0.209,
+  "new": 0.3098,
+  "note": 0.141,
+  "november": -0.0857,
+  "nutrition": 0.0617,
+  "occupation": 0.0591,
+  "offer": 0.0703,
+  "office": 0.2085,
+  "open": 0.4659,
+  "opening": 0.5514,
+  "operating": 0.1328,
+  "operation": 0.1933,
+  "operational": 0.0919,
+  "operations": 0.0521,
+  "order": -0.0636,
+  "outcome": 0.0483,
+  "outright": -0.0666,
+  "outstanding": -0.164,
+  "package": 0.0878,
+  "paid": -0.4626,
+  "parents": -0.1745,
+  "pay": 0.1475,
+  "payable": 0.0051,
+  "paying": -0.2698,
+  "payment": 0.2439,
+  "payments": 0.3273,
+  "peer": -0.0329,
+  "people": -0.0267,
+  "performed": -0.0075,
+  "personal": 0.3066,
+  "personally": 0.0183,
+  "petroleum": 0.0154,
+  "phone": -0.0775,
+  "planning": -0.0922,
+  "positive": -0.059,
+  "prayers": 0.0357,
+  "prior": -0.1587,
+  "process": -0.2283,
+  "programs": -0.0791,
+  "promoted": -0.1341,
+  "proved": 0.034,
+  "provide": 0.1451,
+  "purchase": -0.2728,
+  "quality": 0.0001,
+  "rate": -1.0674,
+  "real": -0.0583,
+  "realized": -0.0108,
+  "reason": 0.0352,
+  "receivable": -0.0553,
+  "receive": 0.2947,
+  "received": -0.0871,
+  "recently": -0.2524,
+  "reduce": 0.0365,
+  "refinance": -0.6173,
+  "regular": -0.1637,
+  "related": -0.181,
+  "renovations": -0.1292,
+  "reo": -0.0165,
+  "repaid": -0.2826,
+  "repay": -0.3006,
+  "request": 0.2172,
+  "required": -0.165,
+  "requires": 0.0577,
+  "response": -0.0326,
+  "rest": -0.1864,
+  "returned": 0.0868,
+  "review": -0.0963,
+  "ridiculous": -0.1893,
+  "ring": -0.5682,
+  "sacrifice": 0.003,
+  "salary": -0.5997,
+  "sale": -0.0667,
+  "save": -0.2811,
+  "saved": -0.2066,
+  "saving": -0.4174,
+  "savings": -0.2473,
+  "screwed": -0.057,
+  "seeking": -0.1409,
+  "september": 0.1788,
+  "server": 0.0288,
+  "signifcantly": -0.0255,
+  "similar": 0.063,
+  "simply": -0.3375,
+  "single": -0.3212,
+  "site": 0.0476,
+  "situation": 0.3155,
+  "small": -0.0944,
+  "sold": -0.068,
+  "solid": -0.1287,
+  "speed": -0.0571,
+  "stable": -0.3035,
+  "start": 0.2062,
+  "stay": 0.2169,
+  "student": -0.2325,
+  "substantial": -0.1297,
+  "successful": -0.0839,
+  "supplements": 0.0147,
+  "support": -0.1752,
+  "surprised": -0.0348,
+  "taylor": 0.0063,
+  "thank": 0.2648,
+  "thanks": -0.2225,
+  "things": 0.209,
+  "time": 0.0127,
+  "tired": -0.1429,
+  "took": -0.0512,
+  "training": 0.0275,
+  "tree": -0.1007,
+  "trying": -0.2539,
+  "turn": -0.0107,
+  "tx": -0.0686,
+  "unable": 0.0342,
+  "unanticipated": -0.0536,
+  "underwater": 0.0723,
+  "union": 0.1774,
+  "use": -0.2584,
+  "used": -0.2338,
+  "using": -0.3433,
+  "utilities": -0.0492,
+  "vacation": 0.1303,
+  "ve": -0.6337,
+  "veterinary": -0.0265,
+  "want": 0.0151,
+  "wedding": -0.2568,
+  "wife": -0.2852,
+  "wipe": -0.0663,
+  "won": -0.0891,
+  "work": 0.0158,
+  "worked": 0.0365,
+  "working": 0.2212,
+  "world": 0.0315,
+  "worth": -0.0459,
+  "wow": -0.0493,
+  "wrong": 0.0169,
+  "year": -0.5017,
+  "years": -0.2963,
+  "youth": 0.0547
+ },
+ "phrases": [
+  {
+   "text": "debt consolidation",
+   "n": 2620
+  },
+  {
+   "text": "credit card consolidation",
+   "n": 524
+  },
+  {
+   "text": "pay off credit cards",
+   "n": 521
+  },
+  {
+   "text": "credit card refinancing",
+   "n": 209
+  },
+  {
+   "text": "credit card debt consolidation",
+   "n": 175
+  },
+  {
+   "text": "home improvement",
+   "n": 167
+  },
+  {
+   "text": "consolidate credit cards",
+   "n": 162
+  },
+  {
+   "text": "debt consolidation debt consolidation",
+   "n": 157
+  },
+  {
+   "text": "consolidation",
+   "n": 156
+  },
+  {
+   "text": "consolidate debt",
+   "n": 128
+  },
+  {
+   "text": "consolidate credit card debt",
+   "n": 124
+  },
+  {
+   "text": "credit card payoff",
+   "n": 114
+  },
+  {
+   "text": "bill consolidation",
+   "n": 97
+  },
+  {
+   "text": "loan consolidation",
+   "n": 89
+  },
+  {
+   "text": "credit card refinance",
+   "n": 82
+  },
+  {
+   "text": "debt consolidation loan",
+   "n": 81
+  },
+  {
+   "text": "credit card debt",
+   "n": 78
+  },
+  {
+   "text": "to consolidate debt",
+   "n": 71
+  },
+  {
+   "text": "personal loan",
+   "n": 70
+  },
+  {
+   "text": "home improvements",
+   "n": 66
+  },
+  {
+   "text": "payoff credit cards",
+   "n": 64
+  },
+  {
+   "text": "paying off credit cards",
+   "n": 63
+  },
+  {
+   "text": "consolidate bills",
+   "n": 62
+  },
+  {
+   "text": "pay off credit card",
+   "n": 52
+  }
+ ],
+ "listings": [
+  {
+   "id": "709197",
+   "desc": "Personal Loan",
+   "year": 2011,
+   "grade": "D",
+   "purpose": "car",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "other",
+    "financial_stress": 0,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 1
+   },
+   "review": {
+    "verdict": "right",
+    "note": "Two words carry no signal, and the model says so: text_quality 1."
+   }
+  },
+  {
+   "id": "1678586",
+   "desc": "I am currently saving up for an engagement ring, and consolidating my outstanding credit card loans into one payment would reduce my monthly payments signifcantly enough for me to be able to purchase a ring in the next few months, which will save me a lot of headaches with the future wife!",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "credit_card",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 1,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "451841",
+   "desc": "HELLO. I WAS ACTUALLY GIVEN THIS COMPANYS INFO. THROUGH THE S.C.O.R.E. OFFICE WHICH IS A BRANCH OF THE SMALL BUSINESS ASSOCIATION. THEY EXPLAINED THAT I DID QUALITY FOR THE 7A SMALL BUSINESS LOAN, HOWEVER, THAT THE PROCESS IS LENGTHY AND THAT MANY PEOPLE IN A SIMILAR SITUATION AS MYSELF HAVE BEEN SUCCESSFUL WITH THE LENDING CLUB. I HAVE BEEN A REAL ESTATE APPRAISER FOR 7 YEARS. WHEN TAYLOR BEAN AND WHITAKER COLLAPSED, I HAD ACCOUNTS PAYABLE OF OVER $20,000 THAT I NEVER RECEIVED FROM THE OFFICE THAT I WORKED AT. I DECIDED TO LEAVE AND OPEN MY OWN BUSINESS. I HAVE BEEN WORKING OUT OF MY HOUSE BUT NOW I AM SO BUSY THAT I AM GOING TO HAVE TO TURN DOWN WORK IF I DON'T MOVE INTO A LARGER BUILDING AND HIRE ANOTHER APPRAISER WHICH REQUIRES NEW COMPUTERS, A NEW SERVER, COMPUTER PROGRAMS, ETC. I HAVE A HIGH AMOUNT OF ACCOUNTS RECEIVABLE HOWEVER, MOST OF THE REO(FORECLOSURE) LENDERS PAY 30-60 DAYS AFTER THE APPRAISAL IS PERFORMED. I WOULD BE MORE THAN GRATEFUL IF YOU WOULD BE ABLE TO ASSIST ME. THANK YOU HELLO. I WAS ACTUALLY GIVEN THIS COMPANYS INFO. THROUGH THE S.C.O.R.E. OFFICE WHICH IS A BRANCH OF THE SMALL BUSINESS ASSOCIATION. THEY EXPLAINED THAT I DID QUALITY FOR THE 7A SMALL BUSINESS LOAN, HOWEVER, THAT THE PROCESS IS LENGTHY AND THAT MANY PEOPLE IN A SIMILAR SITUATION AS MYSELF HAVE BEEN SUCCESSFUL WITH THE LENDING CLUB. I HAVE BEEN A REAL ESTATE APPRAISER FOR 7 YEARS. WHEN TAYLOR BEAN AND WHITAKER COLLAPSED, I HAD ACCOUNTS PAYABLE OF OVER $20,000 THAT I NEVER RECEIVED FROM THE OFFICE THAT I WORKED AT. I DECIDED TO LEAVE AND OPEN MY OWN BUSINESS. I HAVE BEEN WORKING OUT OF MY HOUSE BUT NOW I AM SO BUSY THAT I AM GOING TO HAVE TO TURN DOWN WORK IF I DON'T MOVE INTO A LARGER BUILDING AND HIRE ANOTHER APPRAISER. THIS REQUIRES NEW COMPUTERS, A NEW SERVER, COMPUTER PROGRAMS, ETC. I HAVE A HIGH AMOUNT OF ACCOUNTS RECEIVABLE HOWEVER, MOST OF THE REO(FORECLOSURE) LENDERS PAY 30-60 DAYS AFTER THE APPRAISAL IS PERFORMED. I WOULD BE MORE THAN GRATEFUL IF YOU WOULD BE ABLE TO ASSIST ME. THANK YOU THE FUNDS WILL BE USED TO PURCHASE COMPUTERS, A SERVER, ADDITIONAL OFFICE FURNITURE (IF NEEDED), AND MISC. OFFICE EQUIPTMENT, COMPUTER PROGRAMS, ETC. I AM ABLE TO REPAY THE LOAN DUE TO THE FACT THAT MY ACCOUNTS RECEIVABLE WILL BE RECEIVED AT THE BEGINNING OF NOVEMBER AND EVERY MONTH THEREAFER. I WAS VERY SURPRISED TO SEE THAT MY BUSINESS TOOK OFF SO FAST. MY GOAL WAS TO MOVE INTO A LARGER BUILDING IN APPROX. (1) YEAR AND IT HAS ONLY BEEN A COUPLE OF MONTHS. MY ACCOUNTS RECEIVABLE FOR SEPTEMBER IS APPROX. $12,000. THIS AMOUNT DOUBLED IN A MONTHS TIME FROM THE PRIOR MONTH. AS I HAVE RECENTLY DISCOVERED, THIS BUSINESS CAN BE LUCRATIVE WHEN THE MARKET IS GOOD AND WHEN THE MARKET IS NOT SO GOOD, THEREFORE, I DO NOT SEE ANY REASON AS TO WHY THIS LOAN WILL NOT BE ABLE TO BE REPAID IN FULL. MY 1099 FOR LAST YEAR LISTED $160,000 AND THAT IS WITH PAYING 35% TO MY EMPLOYER. I NOW CAN COLLECT AND KEEP 100% OF THE APPRAISAL FEE.",
+   "year": 2009,
+   "grade": "G",
+   "purpose": "small_business",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "business",
+    "financial_stress": 1,
+    "employment_stability": 3,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "5365409",
+   "desc": "When I sold my last house I was so underwater I had to bring over $44,000 to the closing. I should have used you back then and this would be cleared years ago. Thank you!",
+   "year": 2014,
+   "grade": "B",
+   "purpose": "credit_card",
+   "defaulted": false,
+   "split": "test",
+   "llm": {
+    "loan_purpose_category": "home",
+    "financial_stress": 3,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": {
+    "verdict": "debatable",
+    "note": "Stress 3 for a loss that happened in the past."
+   }
+  },
+  {
+   "id": "200256",
+   "desc": "I would like to have one solid monthly payment that would be more affordable to me. I am a single mom and I receive no child support or any other income besides my work for that matter. Because of my divorce, I ended up in a lot of debt going from credit cards to loans with Credit Union. Borrowing money at a fixed monthly payment would the answer to my prayers.",
+   "year": 2008,
+   "grade": "D",
+   "purpose": "debt_consolidation",
+   "defaulted": true,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 2,
+    "employment_stability": 1,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": true,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": {
+    "verdict": "debatable",
+    "note": "Stress and the family emergency are right. Employment 1 (unstable) is not stated: the text only says work is the sole income."
+   }
+  },
+  {
+   "id": "2086642",
+   "desc": "We are simply trying to finally pay off the rest of our debt , and go to one lower payment. Looking for a brighter future for our family! We are using this loan to pay off credit card debt . I have never defaulted on a loan and I have very good work history. I have been at current job over 12 years. I having been paying my current bills for years and will be able to make my loan payments as it will be a lot less than current bills.",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 2,
+    "employment_stability": 3,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": {
+    "verdict": "right",
+    "note": "Credit cards, twelve years in the job, a stated plan."
+   }
+  },
+  {
+   "id": "613815",
+   "desc": "I'm a petroleum engineer working in the energy capital of the world - Houston, TX. Yet for the last two years, I was working abroad in the middle east-- and hated it. I returned stateside about two years back with just what fit in a suitcase, looking for a job that'd bring me home. Fast forward two years, and now I have a job that I love, closed on a home of my own, and got engaged. Alas, the house and engagement both proved more expensive than I expected! I put most of my savings into my 20% down payment on the house, and used lines of credit to do things like furnish it and start some necessary renovations. Now that that's all done, I've done a review of my finances, and I'm confident I could pay off every cent of debt I have in about three years without much effort. However, by going through lending tree, why, I should be able to do the same in under two years and still keep a comfortable cushion in case something goes wrong in this bad economy... To instill confidence in my as a borrower, please note that I have a graduate degree in engineering, own my car outright, and have paid off my student loans entirely. I currently fully fund my 401(k) and IRA every year. I also have about a bit over $80,000 worth of equity in my home to date. Help me out with a lower interest rate than banks would give for a personal loan!",
+   "year": 2010,
+   "grade": "A",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 1,
+    "employment_stability": 3,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "1020958",
+   "desc": "I have saved what I believe to be about half of the wedding related expenses from my regular income. Making regular payments will be very comfortable, as I have only a student loan payment and 8 months left for car payments. I have a very stable job, which I have had for 9 years - and have recently been promoted.",
+   "year": 2011,
+   "grade": "D",
+   "purpose": "wedding",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "education",
+    "financial_stress": 0,
+    "employment_stability": 3,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": {
+    "verdict": "wrong",
+    "note": "The loan is for a wedding. The model latched onto the student loan mentioned in passing and answered education."
+   }
+  },
+  {
+   "id": "4176319",
+   "desc": "Please help fund this loan so that I can wipe out my credit card payments to one manageable loan. I am never late on payments and hope you can help. Thanks! Wow! I am blown away by the speed of the response to my request, thanks!",
+   "year": 2013,
+   "grade": "C",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 1,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": null
+  },
+  {
+   "id": "8895816",
+   "desc": "Im workink hRD TO CLEAN wy debt, many progreess habe been done, but still more sacrifice to eliminate my debt..I'm planning to consolidate the rest oy my debt in one single payment. To pY MY DEBT, TO CONSolidate in one single payment, I have some credit cards I would like to have a single payment, I know I have workin hard to clean my debt but stil more sacrifice to do so. With the money I ask i would use only to pay my debt, no for vacation .",
+   "year": 2013,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "val",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 2,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 2
+   },
+   "review": null
+  },
+  {
+   "id": "1583722",
+   "desc": "Will pay back Initial loan and pay off everything else to have only one easy payment.I have for over a year now paid back Lending Club never missed a payment and like this peer to peer site the best.",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 1,
+    "employment_stability": 3,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": {
+    "verdict": "wrong",
+    "note": "No job is mentioned, yet employment_stability came back 3. The model read a clean payment history as stable employment."
+   }
+  },
+  {
+   "id": "1579365",
+   "desc": "I am tired of getting screwed with ridiculous interest rate hikes from the credit card companies when I have never missed a payment. I am eager to pay them all off with an installment loan with a lower rate that won't change and to know I will be done paying.",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "credit_card",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 1,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "3526633",
+   "desc": "Costs related to a thoroughbred breeding operation. I have personally funded two years of operations but I need a loan to get me through the next ten months when my current yearlings can be sold to generate additional operating capital for business operations. After personally funding two years of operational costs for my thoroughbred breeding operation consisting of four broodmares two yearlings and two foals, I need additional capital to pay for stallion fees and costs through September 2013. I breed thoroughbreds and additional capital is needed to pay for unanticipated veterinary expenses related to saving a broodmare and her foal who required an extended stay in a equine hospital. While the outcome was positive, the cost of saving them was substantial.",
+   "year": 2013,
+   "grade": "D",
+   "purpose": "small_business",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "business",
+    "financial_stress": 0,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 3
+   },
+   "review": {
+    "verdict": "wrong",
+    "note": "The borrower explains repayment from yearling sales, but has_repayment_plan is false."
+   }
+  },
+  {
+   "id": "3217383",
+   "desc": "consolidation",
+   "year": 2013,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 0,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 1
+   },
+   "review": null
+  },
+  {
+   "id": "8394629",
+   "desc": "Credit card consilidation",
+   "year": 2013,
+   "grade": "B",
+   "purpose": "credit_card",
+   "defaulted": false,
+   "split": "val",
+   "llm": {
+    "loan_purpose_category": "debt_consolidation",
+    "financial_stress": 1,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": {
+    "verdict": "wrong",
+    "note": "The text says credit card consolidation. By the prompt's own rule this should be credit_card."
+   }
+  },
+  {
+   "id": "642370",
+   "desc": "One part of this loan will be used to pay some of my credit cards off; another one to buy vacation package for my parents. I am a good candidate for this loan because I am confident that I can pay it off and I was NEVER late with my loan or credit card payments. Occupation:Office Administrator (5 years in the same company) Annual Salary: $42000 Monthly expenses: Housing: $ 400 Insurance: $ 150 Car expenses: $ 100 Utilities: $ Phone, cable, internet: $ $15 Food, entertainment: $ 200 Clothing, household expenses $ 70 Credit cards and other loans: $ 620 Other expenses: $ 90",
+   "year": 2011,
+   "grade": "B",
+   "purpose": "major_purchase",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 0,
+    "employment_stability": 3,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": true,
+    "text_quality": 3
+   },
+   "review": {
+    "verdict": "right",
+    "note": "Five years at one employer and an itemised budget are both picked up."
+   }
+  },
+  {
+   "id": "8648460",
+   "desc": "I want to refinance my high rate credit cards, I would consider consolidating all of them if your rate were lower, especially compared to my credit cards.",
+   "year": 2013,
+   "grade": "A",
+   "purpose": "credit_card",
+   "defaulted": false,
+   "split": "val",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 1,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "10715371",
+   "desc": "I have a major credit card that I can not get seem to get anywhere with because the min. payment just covers interest and I would like to pay it off.",
+   "year": 2014,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": false,
+   "split": "test",
+   "llm": {
+    "loan_purpose_category": "credit_card",
+    "financial_stress": 2,
+    "employment_stability": 0,
+    "mentions_other_debts": true,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": null
+  },
+  {
+   "id": "1580700",
+   "desc": "I am opening a Holisitc Health and Fitness center. I am seeking a loan to finance my gym equipment. This center will offer personal training, on-site dietitian, nutrition advice, crossfit, sale of supplements/vitamins.",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "small_business",
+   "defaulted": false,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "business",
+    "financial_stress": 0,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 3
+   },
+   "review": null
+  },
+  {
+   "id": "1635125",
+   "desc": "I recently met the love of my life and have realized that the transgressions of my youth have left me unable to provide the ideal financial situation for us to start our life together. With this loan, I will be able to get my finances in order and start saving for our big day!",
+   "year": 2012,
+   "grade": "B",
+   "purpose": "debt_consolidation",
+   "defaulted": true,
+   "split": "train",
+   "llm": {
+    "loan_purpose_category": "other",
+    "financial_stress": 0,
+    "employment_stability": 0,
+    "mentions_other_debts": false,
+    "mentions_job_loss_or_income_drop": false,
+    "mentions_medical_or_family_emergency": false,
+    "has_repayment_plan": false,
+    "text_quality": 2
+   },
+   "review": null
+  }
+ ],
+ "pilot": {
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "source": "Kaggle T4 pilot, scripts.llm_extract --n 20 --json-mode off, vLLM 0.6.6.post1, recorded 2026-09-26",
+  "cost": {
+   "n": 20,
+   "valid_rate": 1.0,
+   "retry_rate": 0.0,
+   "mean_prompt_tokens": 518.6,
+   "mean_completion_tokens": 82.55,
+   "concurrency": 16,
+   "wall_seconds": 16.9,
+   "accelerator_seconds_per_application": 0.843
+  }
+ },
+ "llm_run": {
+  "model": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "n": 125700,
+  "n_null": 39,
+  "n_timed_calls": 58023,
+  "mean_prompt_tokens": 452.9474001688985,
+  "mean_completion_tokens": 82.76080175102976,
+  "gpu_seconds_per_application": 0.4587904796373852
+ },
+ "embedding_cost": {
+  "model": "BAAI/bge-small-en-v1.5",
+  "device": "cpu",
+  "mean_tokens": 45.2529276054097,
+  "ms_per_application": 19.47353450727898,
+  "n_texts": 116019,
+  "minutes": 37.655
+ },
+ "totals": {
+  "loans": 125700,
+  "defaults": 19576,
+  "default_rate": 0.15573587907716785,
+  "test_loans": 19858,
+  "unique_texts": 116307,
+  "n_bootstrap": 1000,
+  "tests": 88
+ }
+}
