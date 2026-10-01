@@ -1,7 +1,9 @@
 import { useCalm } from "../lib/useCalm";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { type PointerEvent, type ReactNode, useState } from "react";
+import { LEAKAGE_REASON_RU, MONTHS_RU } from "../content/ru";
 import { experiment, fmtInt, fmtPct, fmtSigned, study } from "../data/study";
+import { useLang } from "../lib/i18n";
 import { EASE_OUT } from "../lib/motion";
 import { Reveal } from "./Reveal";
 
@@ -53,17 +55,21 @@ const BODY = "mt-3 max-w-[52ch] text-[0.975rem] leading-relaxed text-muted";
 function Leakage() {
   const { denied, n_denied, n_allowed } = study.leakage;
   const [active, setActive] = useState(denied.find((d) => d.column === "recoveries") ?? denied[0]);
+  const { t, ru } = useLang();
 
   return (
     <div className="flex h-full flex-col">
-      <h3 className={H3}>{n_denied} columns never reach the model</h3>
+      <h3 className={H3}>
+        {t(`${n_denied} columns never reach the model`, `${n_denied} колонок, которые модель не видит никогда`)}
+      </h3>
       <p className={BODY}>
-        Anything known only after a loan is issued would predict default almost perfectly. Those
-        columns are denied by name, {n_allowed} reviewed columns are allowed, and anything on
-        neither list is dropped. A test fails if either rule breaks.
+        {t(
+          `Anything known only after a loan is issued would predict default almost perfectly. Those columns are denied by name, ${n_allowed} reviewed columns are allowed, and anything on neither list is dropped. A test fails if either rule breaks.`,
+          `Всё, что становится известно только после выдачи кредита, предсказывало бы дефолт почти идеально. Такие колонки запрещены поимённо, проверенных и разрешённых колонок ${n_allowed}, а всё, чего нет ни в одном списке, отбрасывается. Если любое из правил нарушено, тест падает.`,
+        )}
       </p>
       {/* Column names are code identifiers, so they are set in the mono face. */}
-      <ul className="mb-6 mt-8 flex flex-wrap gap-x-4 gap-y-2.5 font-mono text-[14px] leading-snug" aria-label="Denied columns">
+      <ul className="mb-6 mt-8 flex flex-wrap gap-x-4 gap-y-2.5 font-mono text-[14px] leading-snug" aria-label={t("Denied columns", "Запрещённые колонки")}>
         {denied.map((d) => (
           <li key={d.column} className="max-w-full">
             <button
@@ -83,7 +89,7 @@ function Leakage() {
       </ul>
       <p className="mt-auto border-t border-line pt-5 text-[0.975rem] leading-relaxed" aria-live="polite">
         <span className="font-mono text-[14px] text-paper">{active.column}</span>
-        <span className="text-muted">: {active.reason}</span>
+        <span className="text-muted">: {(ru && LEAKAGE_REASON_RU[active.reason]) || active.reason}</span>
       </p>
     </div>
   );
@@ -91,16 +97,19 @@ function Leakage() {
 
 function Funnel() {
   const calm = useCalm();
+  const { t } = useLang();
   const pick = (prefix: string) => study.funnel.find((f) => f.step.startsWith(prefix))?.rows ?? 0;
   const rows = [
-    { label: "loans in the raw file", n: pick("raw") },
-    { label: "with a finished outcome", n: pick("finished") },
-    { label: "where the borrower wrote something", n: pick("unique") },
+    { label: t("loans in the raw file", "кредитов в исходном файле"), n: pick("raw") },
+    { label: t("with a finished outcome", "с известным исходом"), n: pick("finished") },
+    { label: t("where the borrower wrote something", "где заёмщик что-то написал"), n: pick("unique") },
   ];
   const max = rows[0].n || 1;
   return (
     <>
-      <h3 className={H3}>From 2.26 million loans to the ones with a voice</h3>
+      <h3 className={H3}>
+        {t("From 2.26 million loans to the ones with a voice", "От 2,26 млн кредитов к тем, у кого есть голос")}
+      </h3>
       <ul className="mt-6 space-y-4">
         {rows.map((r, i) => (
           <li key={r.label}>
@@ -125,11 +134,12 @@ function Funnel() {
 
 function Coverage() {
   const calm = useCalm();
+  const { t } = useLang();
   const years = study.coverage_by_year;
   return (
     <>
-      <h3 className={H3}>The text field disappears in 2014</h3>
-      <div className="mt-6 flex h-32 items-end gap-1.5" role="img" aria-label="Share of loans with a description, by issue year">
+      <h3 className={H3}>{t("The text field disappears in 2014", "В 2014 году текстовое поле исчезает")}</h3>
+      <div className="mt-6 flex h-32 items-end gap-1.5" role="img" aria-label={t("Share of loans with a description, by issue year", "Доля кредитов с описанием по годам выдачи")}>
         {years.map((y, i) => (
           <div key={y.year} className="flex h-full flex-1 flex-col justify-end">
             <motion.div
@@ -151,9 +161,10 @@ function Coverage() {
         ))}
       </div>
       <p className={BODY}>
-        {fmtPct(years.find((y) => y.year === 2013)?.coverage ?? 0, 0)} of 2013 loans carry a
-        description, {fmtPct(years.find((y) => y.year === 2014)?.coverage ?? 0, 1)} of 2014 loans,
-        none after. The study can only speak about that window.
+        {t(
+          `${fmtPct(years.find((y) => y.year === 2013)?.coverage ?? 0, 0)} of 2013 loans carry a description, ${fmtPct(years.find((y) => y.year === 2014)?.coverage ?? 0, 1)} of 2014 loans, none after. The study can only speak about that window.`,
+          `Описание есть у ${fmtPct(years.find((y) => y.year === 2013)?.coverage ?? 0, 0)} кредитов 2013 года, у ${fmtPct(years.find((y) => y.year === 2014)?.coverage ?? 0, 1)} кредитов 2014 года, позже — ни у одного. Исследование может говорить только об этом окне.`,
+        )}
       </p>
     </>
   );
@@ -161,14 +172,21 @@ function Coverage() {
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 /** "2013-07" -> "Jul 2013" */
-const fmtMonth = (ym: string): string => `${MONTHS[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
+const fmtMonth = (ym: string, ru = false): string =>
+  `${(ru ? MONTHS_RU : MONTHS)[Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`;
+const SPLIT_NAME: Record<string, [string, string]> = {
+  train: ["Train", "Обучение"],
+  val: ["Validation", "Валидация"],
+  test: ["Test", "Тест"],
+};
 
 function Split() {
   const calm = useCalm();
+  const { t, ru } = useLang();
   const tone = ["bg-paper/30", "bg-paper/60", "bg-paper"];
   return (
     <>
-      <h3 className={H3}>Train on the past, test on the future</h3>
+      <h3 className={H3}>{t("Train on the past, test on the future", "Учим на прошлом, проверяем на будущем")}</h3>
       <div className="mt-6 flex h-3 gap-1 overflow-hidden rounded-full" aria-hidden="true">
         {study.splits.map((s, i) => (
           <motion.div
@@ -185,20 +203,25 @@ function Split() {
       <dl className="mt-4 grid grid-cols-3 gap-3 text-sm">
         {study.splits.map((s) => (
           <div key={s.split}>
-            <dt className="font-medium capitalize">{s.split === "val" ? "Validation" : s.split}</dt>
+            <dt className="font-medium">{(SPLIT_NAME[s.split] ?? [s.split, s.split])[ru ? 1 : 0]}</dt>
             <dd className="tnum mt-1 leading-snug text-muted">
-              {fmtInt(s.rows)} loans
+              {fmtInt(s.rows)} {t("loans", "кредитов")}
               <br />
               {s.split === "test"
-                ? `from ${fmtMonth(s.first_month)}`
-                : `${fmtMonth(s.first_month)} to ${fmtMonth(s.last_month)}`}
+                ? t(`from ${fmtMonth(s.first_month)}`, `с ${fmtMonth(s.first_month, true)}`)
+                : t(
+                    `${fmtMonth(s.first_month)} to ${fmtMonth(s.last_month)}`,
+                    `${fmtMonth(s.first_month, true)} – ${fmtMonth(s.last_month, true)}`,
+                  )}
             </dd>
           </div>
         ))}
       </dl>
       <p className={BODY}>
-        Split by issue month, never at random, and no month sits in two splits. Early stopping
-        uses validation only.
+        {t(
+          "Split by issue month, never at random, and no month sits in two splits. Early stopping uses validation only.",
+          "Разбиение по месяцу выдачи, никогда не случайное: ни один месяц не попадает в две части. Ранняя остановка использует только валидацию.",
+        )}
       </p>
     </>
   );
@@ -206,17 +229,22 @@ function Split() {
 
 function Bootstrap() {
   const d = experiment("e1")?.vs_e0?.gini;
+  const { t } = useLang();
   return (
     <>
-      <h3 className={H3}>Every difference is paired</h3>
+      <h3 className={H3}>{t("Every difference is paired", "Каждая разница — парная")}</h3>
       <p className={BODY}>
-        Both models are scored on the same {fmtInt(study.totals.n_bootstrap)} resampled test sets,
-        so shared sampling noise cancels and only the difference remains.
+        {t(
+          `Both models are scored on the same ${fmtInt(study.totals.n_bootstrap)} resampled test sets, so shared sampling noise cancels and only the difference remains.`,
+          `Обе модели оцениваются на одних и тех же ${fmtInt(study.totals.n_bootstrap)} бутстреп-выборках из теста: общий шум выборки сокращается, остаётся только разница.`,
+        )}
       </p>
       {d && (
         <p className="tnum mt-5 text-sm text-paper/85">
-          Embeddings vs baseline: {fmtSigned(d.diff, 4)} Gini, interval {fmtSigned(d.ci_low, 4)} to{" "}
-          {fmtSigned(d.ci_high, 4)}.
+          {t(
+            `Embeddings vs baseline: ${fmtSigned(d.diff, 4)} Gini, interval ${fmtSigned(d.ci_low, 4)} to ${fmtSigned(d.ci_high, 4)}.`,
+            `Эмбеддинги против базовой модели: ${fmtSigned(d.diff, 4)} Gini, интервал от ${fmtSigned(d.ci_low, 4)} до ${fmtSigned(d.ci_high, 4)}.`,
+          )}
         </p>
       )}
     </>
@@ -224,26 +252,31 @@ function Bootstrap() {
 }
 
 function Tests() {
+  const { t } = useLang();
   return (
     <>
       <p className="tnum font-display text-6xl font-medium leading-none tracking-[-0.03em]">
         {study.totals.tests ?? ""}
       </p>
-      <h3 className="mt-3 font-display text-xl font-medium">automated tests</h3>
+      <h3 className="mt-3 font-display text-xl font-medium">{t("automated tests", "автотестов")}</h3>
       <p className={BODY}>
-        Including one that fails the build if a leakage column reaches the feature matrix.
+        {t(
+          "Including one that fails the build if a leakage column reaches the feature matrix.",
+          "В том числе тест, который падает, если колонка с утечкой попадает в матрицу признаков.",
+        )}
       </p>
     </>
   );
 }
 
 export function Method() {
+  const { t } = useLang();
   return (
     <section id="method" className="relative z-10 py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <Reveal>
           <h2 className="max-w-[18ch] font-display text-[clamp(2rem,4.2vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.025em]">
-            How it was measured
+            {t("How it was measured", "Как это измерялось")}
           </h2>
         </Reveal>
 

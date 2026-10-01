@@ -18,8 +18,8 @@
   --color-warm: #ff5a3c;
   --color-cool: #5fd4b1;
 
-  --font-display: "Clash Display", "Satoshi", system-ui, sans-serif;
-  --font-sans: "Satoshi", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Clash Display", "Geologica Variable", "Satoshi", system-ui, sans-serif;
+  --font-sans: "Satoshi", "Onest Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
 
   /* Strong ease-out: responsive on entry, settles softly. */

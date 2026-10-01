@@ -164,6 +164,10 @@ cd site && npm install && npm run dev   # http://localhost:5173
 npm run build                           # static bundle in site/dist
 ```
 
+The page is in English and Russian (switch in the top bar, or `?lang=ru`). Borrower texts and
+the LLM's JSON stay in the original. `bash site/scripts/deploy.sh` publishes the build to
+GitHub Pages: https://hisoka742.github.io/llm-credit-risk-lab/
+
 Add `?motion=on` to the URL to preview the animations on a machine whose OS has animation
 effects turned off. Fill `site/src/content/profile.ts` with your name, repository URL and
 email to enable the repository button and the contact form.
@@ -183,8 +187,10 @@ python -m scripts.serve                                     # API on http://127.
 cd site && npm run dev                                      # the "Same borrower, your words" section appears
 ```
 
-- **Reader.** `configs/live.yaml` selects it. The default is GigaChat (`live.provider:
-  gigachat`): put `GIGACHAT_AUTH_KEY` in `.env`, and set `GIGACHAT_CA_BUNDLE` to the Russian
+- **Reader.** `configs/live.yaml` selects it. The default is GigaChat-2-Max (`live.provider:
+  gigachat`). The smaller GigaChat-2 and GigaChat-2-Pro often renamed or dropped a JSON key
+  (`mentions_loss_or_income_drop`) and failed the strict schema; Max returned valid JSON on
+  all 72 recorded runs. Put `GIGACHAT_AUTH_KEY` in `.env`, and set `GIGACHAT_CA_BUNDLE` to the Russian
   Trusted Root CA file, because Sber's endpoints are not signed by a CA in the default trust
   store. [gigachat.py](src/live/gigachat.py) exchanges the key for a 30-minute access token
   and refreshes it. Any OpenAI-compatible server works too:
@@ -197,7 +203,12 @@ cd site && npm run dev                                      # the "Same borrower
   prediction. The study found no significant gain from these features in the first place.
 - **Abuse limits.** The endpoint spends the owner's LLM quota, so it rejects long inputs,
   rate-limits each client and has a daily budget (`configs/live.yaml`).
-- The static site build hides the section unless `VITE_API_URL` points to a running API.
+- **Recorded runs.** `python -m scripts.record_live` reads five prepared texts (one in
+  Russian) and each profile's original description with the live reader and saves the real
+  answers to `reports/live/recorded.json`. The public static site shows these, labelled as
+  recorded, because it has no server. On the 12 original descriptions GigaChat-2-Max agrees
+  with Qwen's training labels on 86 of 96 fields.
+- A site build talks to a live API only when `VITE_API_URL` points to one.
 
 ## Repo layout
 

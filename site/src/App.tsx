@@ -22,7 +22,7 @@ const SECTIONS: [string, ReactNode][] = [
   ["results", <Results key="results" />],
   ["words", <Words key="words" />],
   ["stability", <Stability key="stability" />],
-  // Renders nothing unless the live API (scripts.serve) is reachable.
+  // Live when the API (scripts.serve) is reachable, recorded GigaChat runs otherwise.
   ["live", <Live key="live" />],
   ["limits", <Limits key="limits" />],
   ["build", <Build key="build" />],

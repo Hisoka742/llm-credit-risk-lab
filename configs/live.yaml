@@ -5,7 +5,9 @@ inherits: e2.yaml
 # (GIGACHAT_AUTH_KEY), see src/live/gigachat.py.
 live:
   provider: gigachat          # gigachat | openai_compatible (any /v1 server, uses llm.base_url)
-  model: GigaChat-2           # GigaChat-2 (Lite), GigaChat-2-Pro, GigaChat-2-Max
+  # GigaChat-2-Max: in a 7-text check the smaller GigaChat-2 and GigaChat-2-Pro often renamed
+  # or dropped a key (e.g. mentions_loss_or_income_drop) and failed the strict schema, Max did not.
+  model: GigaChat-2-Max
   scope: GIGACHAT_API_PERS    # GIGACHAT_API_B2B / GIGACHAT_API_CORP for company accounts
   # Deterministic reading. If the API rejects 0, use a small value such as 0.01.
   temperature: 0.0

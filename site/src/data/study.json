@@ -1897,6 +1897,4136 @@
   "mean_completion_tokens": 82.76080175102976,
   "gpu_seconds_per_application": 0.4587904796373852
  },
+ "live": {
+  "reader": "GigaChat-2-Max",
+  "provider": "gigachat",
+  "trained_on": "Qwen/Qwen2.5-7B-Instruct-AWQ",
+  "recorded_on": "2026-10-01",
+  "max_text_chars": 1500,
+  "texts": [
+   {
+    "id": "hardship",
+    "lang": "en",
+    "text": "I lost my job two months ago and I am behind on my credit card bills. My wife had surgery and we need help to catch up."
+   },
+   {
+    "id": "stable_plan",
+    "lang": "en",
+    "text": "I have worked as a nurse at the same hospital for eleven years. I want to pay off two credit cards at a lower rate. My budget leaves $600 a month for this payment and I plan to finish in three years."
+   },
+   {
+    "id": "two_words",
+    "lang": "en",
+    "text": "need money"
+   },
+   {
+    "id": "business",
+    "lang": "en",
+    "text": "I am opening a second location for my bakery and need funds for equipment and the first months of rent."
+   },
+   {
+    "id": "stable_plan_ru",
+    "lang": "ru",
+    "text": "Работаю инженером на одном заводе девять лет. Хочу закрыть две кредитные карты одним платежом по более низкой ставке. Из зарплаты могу отдавать 40 тысяч в месяц и планирую расплатиться за три года."
+   }
+  ],
+  "profiles": [
+   {
+    "id": "10607463",
+    "desc": "Pay off High interest credit cards. Have been current on all my payments. I want one simple payment once a month and this gives me the opportunity to do so.",
+    "issued": "2014-01",
+    "grade": "A",
+    "int_rate": 7.9,
+    "loan_amnt": 16000.0,
+    "annual_inc": 65000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": false,
+    "pd_no_text": 0.036210823017458225,
+    "pd_original_text": 0.03725565574304886,
+    "original_reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 2.0
+    }
+   },
+   {
+    "id": "10103561",
+    "desc": "Our house is 14 years old. It needs new HVAC, new carpet, and refinished floors, as we may sell it within a short time. Even if we do not sell, the updates need to be made in order for the property to maintain its value.",
+    "issued": "2014-01",
+    "grade": "A",
+    "int_rate": 8.9,
+    "loan_amnt": 16800.0,
+    "annual_inc": 166000.0,
+    "purpose": "home_improvement",
+    "defaulted": true,
+    "pd_no_text": 0.02494373779237593,
+    "pd_original_text": 0.02945347819936504,
+    "original_reading": {
+     "loan_purpose_category": "home",
+     "financial_stress": 0.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 2.0
+    }
+   },
+   {
+    "id": "10091487",
+    "desc": "Hello. I have requested $30,000 to refinance 4 credit cards that have an interest rate of 14% or higher and would like to pay them off quickly. Thank you.",
+    "issued": "2014-01",
+    "grade": "B",
+    "int_rate": 9.67,
+    "loan_amnt": 30000.0,
+    "annual_inc": 140000.0,
+    "purpose": "credit_card",
+    "defaulted": false,
+    "pd_no_text": 0.06171590793508386,
+    "pd_original_text": 0.05158867645319138,
+    "original_reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "9706268",
+    "desc": "Hello, Unfortunately I have a few credit cards with the average interest rate of 27 - 31% and 2 unsecured loans that are at 30% interest and am truly in need of a lower rate! Currently I do have a loan thru Lendg Clb and have never been late on pymt - would like to get lower too. consolidation",
+    "issued": "2013-12",
+    "grade": "B",
+    "int_rate": 13.53,
+    "loan_amnt": 30000.0,
+    "annual_inc": 95000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": true,
+    "pd_no_text": 0.19200649810858497,
+    "pd_original_text": 0.16484358019927564,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "12445295",
+    "desc": "I currently have a loan that has a high interest rate and I am looking for a lower rate. I have a steady job, and I have payed off my credit cards over the last year and would like to do the same with this loan, which is my final debt to pay off. I see the light at the end of the tunnel.",
+    "issued": "2014-02",
+    "grade": "C",
+    "int_rate": 13.65,
+    "loan_amnt": 6300.0,
+    "annual_inc": 60000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": false,
+    "pd_no_text": 0.0536375034826413,
+    "pd_original_text": 0.04653559080852064,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1.0,
+     "employment_stability": 3.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "10577866",
+    "desc": "Looking to consolidate several high interest loans/accounts and have only one monthly payment verses several. This will help me become debt free and financially independent.",
+    "issued": "2014-01",
+    "grade": "C",
+    "int_rate": 16.24,
+    "loan_amnt": 25000.0,
+    "annual_inc": 107756.0,
+    "purpose": "debt_consolidation",
+    "defaulted": true,
+    "pd_no_text": 0.16241490328812344,
+    "pd_original_text": 0.16849416522479432,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "10994799",
+    "desc": "I have used credit cards to keep my business going and now that it is working on its own I want to consolidate the debt with a fixed payment plan to pay off the debt.",
+    "issued": "2014-02",
+    "grade": "D",
+    "int_rate": 17.57,
+    "loan_amnt": 24800.0,
+    "annual_inc": 80000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": false,
+    "pd_no_text": 0.2502556634118299,
+    "pd_original_text": 0.23754103544233796,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "13005551",
+    "desc": "I want to pay of all credit cards and my auto loan to consolidate into 1 payment per month only. In addition, having all accounts paid in full to increase my credit score. Lastly, I badly need to re roof my house before spring storms.",
+    "issued": "2014-03",
+    "grade": "D",
+    "int_rate": 19.47,
+    "loan_amnt": 19725.0,
+    "annual_inc": 73000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": true,
+    "pd_no_text": 0.2649565308287342,
+    "pd_original_text": 0.2996412387351186,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "12806152",
+    "desc": "I want to be debt free, and feel this is a good way to do so, by paying off all credit cards and accounts. This loan will set a time limit for that to occur and I would be paying less each month, and it will give me the chance to pay it off even faster.",
+    "issued": "2014-03",
+    "grade": "E",
+    "int_rate": 21.99,
+    "loan_amnt": 13900.0,
+    "annual_inc": 38500.0,
+    "purpose": "debt_consolidation",
+    "defaulted": false,
+    "pd_no_text": 0.4263019140696932,
+    "pd_original_text": 0.4164940549157387,
+    "original_reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "11357887",
+    "desc": "I started a great new job that has good benefits, however, I cannot come into them for another few months. I had surgery last year and am supposed to go for routine checkups and haven't been able to because of funds. This loan would be used towards doctor's visits.",
+    "issued": "2014-02",
+    "grade": "E",
+    "int_rate": 20.5,
+    "loan_amnt": 4800.0,
+    "annual_inc": 46000.0,
+    "purpose": "medical",
+    "defaulted": true,
+    "pd_no_text": 0.21846125267886604,
+    "pd_original_text": 0.24251661997591067,
+    "original_reading": {
+     "loan_purpose_category": "medical",
+     "financial_stress": 2.0,
+     "employment_stability": 1.0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "10737135",
+    "desc": "I am trying to pay off debt and have one monthly payment rather than have ten or more to pay every month. I am trying to consolidate debt in one monthly payment rather than have to pay ten different companies and pay interest on more than ten different bills. It is much simpler to have one payment than at least ten. It is so hard to keep up with this many different bills to pay.",
+    "issued": "2014-01",
+    "grade": "F",
+    "int_rate": 24.5,
+    "loan_amnt": 10075.0,
+    "annual_inc": 35000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": false,
+    "pd_no_text": 0.34874256653265506,
+    "pd_original_text": 0.4053378652851842,
+    "original_reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   },
+   {
+    "id": "12478039",
+    "desc": "This loan is to get a fixed payment and eliminate the high interest credit card payment I currently have. My goal is to cancel these credit cards stick to one payment and get out of debt.",
+    "issued": "2014-03",
+    "grade": "F",
+    "int_rate": 24.08,
+    "loan_amnt": 20000.0,
+    "annual_inc": 85000.0,
+    "purpose": "debt_consolidation",
+    "defaulted": true,
+    "pd_no_text": 0.5808973478708724,
+    "pd_original_text": 0.42239728556294065,
+    "original_reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1.0,
+     "employment_stability": 0.0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3.0
+    }
+   }
+  ],
+  "runs": [
+   {
+    "profile_id": "10607463",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.036229239818041256,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.013871209300058153
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.09982737735813488
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.003083971036251805
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0031309784550023366
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.01567805044623869
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.08093064734336823
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.017546686396978175
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06382281442302908
+     }
+    ]
+   },
+   {
+    "profile_id": "10607463",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.0294225240391009,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.06729627211341611
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013122094210541623
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.022223465922879507
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0017840447332413965
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.00022587174569322128
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006260783463890992
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04536744018611661
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06035952056392491
+     }
+    ]
+   },
+   {
+    "profile_id": "10607463",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.04006716378108046,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.0245388838145847
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.015155446418401547
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.004646932995825909
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.007976423419798661
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.00022587174569322128
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006335439605116806
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016876800038707986
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.12006585812049071
+     }
+    ]
+   },
+   {
+    "profile_id": "10607463",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.05763184778288271,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.4685287799572645
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.008491202908019494
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.008704371682211002
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.008529421070536999
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.00022587174569322128
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.005528008216670363
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016119771270461398
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06292205843034296
+     }
+    ]
+   },
+   {
+    "profile_id": "10607463",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.03214845537632093,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.011325113474678274
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.012622046182283748
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.008202120138048044
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0025545967199758547
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.00022587174569322128
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006347766926820427
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04511555147410915
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06086982702951742
+     }
+    ]
+   },
+   {
+    "profile_id": "10607463",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 2,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 2.392,
+    "prompt_tokens": 449,
+    "completion_tokens": 78,
+    "pd_your_text": 0.03151369019247967,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.06829117905798407
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013476699972472892
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.01344815012034056
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0016201005007716511
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.00022587174569322128
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006319486994265841
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015808616449949596
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06047796637699249
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.030732683115559396,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.01827798856205608
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.11375615983574049
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.013915839811192997
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0004939710698364378
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.002052611985015316
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.10604014769500918
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.018035633534467438
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.0655936474605795
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.022404428047184295,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.05980005022070242
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011788518719565108
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.032988261204150285
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.001256362219809191
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.0200277189396986e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007707524178968309
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04482636963609952
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.059935253866395734
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.03235487977480026,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.018497534321327423
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.014576998622397625
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.007764809078341314
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0018343969859748073
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.0200277189396986e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.00791399555115918
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.018357190023571612
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.14852799764869945
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.039394474445107984,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.42892451443322105
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.005182346567093172
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.003127131884636122
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0017015852522083838
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.0200277189396986e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007581788637095143
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015752720190921166
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.050654875229332
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.024162643829438276,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.016777506103627212
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011288470691307232
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.016457339269850733
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0004858102330747327
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.0200277189396986e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007794507641897744
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04482636963609952
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.060493086320159435
+     }
+    ]
+   },
+   {
+    "profile_id": "10103561",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "home",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.928,
+    "prompt_tokens": 472,
+    "completion_tokens": 77,
+    "pd_your_text": 0.025514937314859848,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.014335611488402651
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011204015174488087
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.007514463842741098
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0019372901485443829
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.0200277189396986e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007851785696856307
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016257777726174084
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.059237970087533336
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.06763748356174556,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.01553224415629206
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.10177878162367479
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.017275315558523928
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0012682177385914348
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.014329164282125793
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.10383819968322305
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01773947944582026
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.057395991361110475
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.049086587388310836,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.06322405586900824
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01165959543978889
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.019748719863719053
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 7.871598316950523e-05
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00020707967172905206
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007631568412102057
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04349673029228137
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05345270761447717
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.06675537644207528,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.018604307517295224
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013938152453559538
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0012771378635209152
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.003128344098765222
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00020707967172905206
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007745999579388927
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.0165302611587554
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.14523043619819653
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.08233321418929772,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.40867646754901965
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.0084391542615346
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.00594634917059785
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.003657338206930465
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00020707967172905206
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.0059893636461234735
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01619016237669763
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.042425135595456104
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.052819568770163396,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.010324804720966882
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011159547411531015
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.0053309610136353415
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0006918360035649532
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00020707967172905206
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007718551875031491
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04349673029228137
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05345665268204523
+     }
+    ]
+   },
+   {
+    "profile_id": "10091487",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.618,
+    "prompt_tokens": 54,
+    "completion_tokens": 78,
+    "pd_your_text": 0.05158867645319138,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.05102221042851128
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.012704725301618439
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.002713250696397156
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00024266021563925055
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00020707967172905206
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007690271942476905
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015199181317991372
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.053419484599746096
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.175298094463768,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.023199812775094957
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.051976417201361355
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.006589280954950152
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0037925449178180036
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.007378097940030697
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.11939527700406496
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.013605627693368354
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.056463342929621775
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.14520247691646318,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.0542510847215231
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01204630913044246
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.01853413552742398
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.004152097082090235
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0001373073240204334
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008854437988518362
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04272054208606853
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05044630721158777
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.19444979034378704,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.028223562054563882
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.010553364878638474
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.006892443015528968
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.012036228224556246
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0001373073240204334
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.009196209307007834
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015066845170371965
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.15193275565353376
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.2069177517752107,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.34926274165687377
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.006335395055234693
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.003928521131814592
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.012565222332721488
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0001373073240204334
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008312663699204628
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015443314606059997
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.033572070802960194
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.15738814571096255,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.02481544979738705
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011630076365684968
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.0036246696788681523
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0037510350277282574
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0001373073240204334
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008941421451447796
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04272054208606853
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05141035835642162
+     }
+    ]
+   },
+   {
+    "profile_id": "9706268",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.7,
+    "prompt_tokens": 495,
+    "completion_tokens": 81,
+    "pd_your_text": 0.16798593409848733,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.020471785469807068
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.03704262943108675
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0064814145434608375
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0037925449178180036
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0001373073240204334
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.009000124981822644
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.014939172063845728
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05496802903666662
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.06730265916194664,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.028402146777072246
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.13028587372266823
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.004346509673485084
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005825397781564715
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0020434024375153423
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.14186610127309457
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01922451591680881
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06352279545536413
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.04041658374461898,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.08884313155136338
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.016563162992656418
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.023794143128941916
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.003944742278920543
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.9409824689370613e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.011231235421418368
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04934099757932961
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.062137820351247125
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.06576313827939904,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.030193354417477627
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.017189262479777003
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.006029304537880542
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.010370415339876855
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.9409824689370613e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.01064200673185989
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.019837772577778773
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.15956289197631934
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.08420430727765352,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.4513487652000965
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.011791609071525728
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.008991379990224346
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.017181933679085392
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.9409824689370613e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010307449866423724
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.018015284388720704
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.04888217094685361
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.04653559080852064,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.01829139840599213
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01678610501898918
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.00312193853038347
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.00488823798591186
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.9409824689370613e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.01125160523750664
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05008511148301545
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.061428153432152854
+     }
+    ]
+   },
+   {
+    "profile_id": "12445295",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 2.103,
+    "prompt_tokens": 81,
+    "completion_tokens": 81,
+    "pd_your_text": 0.049397060949995554,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.01786635036385173
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01727246518673873
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.00312193853038347
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005085071814068489
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 4.9409824689370613e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.011315701352933546
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.017513453956212156
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.061755212801651506
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.1878560507471682,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.028191293323845297
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.08971695557867831
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.001323544425374016
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00030432118325511673
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.009162619197421807
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.09586872964287829
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01715552795687348
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.0635538910963248
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.14623851822032308,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.05210000313169884
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.00966627678053195
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.023051536860067577
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0010454999270834147
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00015262533229658186
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007326025758484239
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04495993225632422
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05515618138763427
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.18767604069475483,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.008638369457717735
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.014472848277154247
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0012949674614481448
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005463343507736452
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00015262533229658186
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.0077882694327925895
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015842611221619375
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.14878779457301888
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.2234585897491301,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.3692317459034544
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.004190961984306626
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.016094956668742524
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0014580803874101379
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00015262533229658186
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006784686324540991
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01641201030344737
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.04175704197092054
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.159424877591122,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.027674928222687002
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.009513315397623465
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.005790617299230333
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0006037250884812734
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00015262533229658186
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007513580708497102
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.04470804354431676
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05589458696864647
+     }
+    ]
+   },
+   {
+    "profile_id": "10577866",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.676,
+    "prompt_tokens": 41,
+    "completion_tokens": 81,
+    "pd_your_text": 0.16849416522479432,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.0267750146119176
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.031292598655383724
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0016930879326570462
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00030432118325511673
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00015262533229658186
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.0075722842388719494
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01702363060182715
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06144715837688931
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.26439112982086077,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.04212105517087123
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.08804143932269932
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.013045676601017856
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00012678235881868232
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.015101133733408503
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.09948060128804091
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01754357451002527
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.062036077418364644
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.2229728915431654,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.0465768194007966
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.015675694509207902
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.023820517973374672
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0009339501171178326
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0002894816735782776
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007762780256979504
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05019961744195072
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05477427270063113
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.27235574558764875,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.00725478408060113
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01715133974610171
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.00031395106557417297
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.004306277423619704
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0002894816735782776
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008301769891474377
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.017997560168501375
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.12842258296199552
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.30885536198499497,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.3352988483425662
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.010379973498841484
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.001245229633975013
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.002615146471526885
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0002894816735782776
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006138804349860432
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.017804356145849506
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.03722604671061204
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.23620476628853554,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.026282359597780157
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.015713057246958102
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.008065745697441729
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00016339813038337406
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0002894816735782776
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007849763719908939
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05019961744195072
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.053757051100254694
+     }
+    ]
+   },
+   {
+    "profile_id": "10994799",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 2,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.848,
+    "prompt_tokens": 453,
+    "completion_tokens": 81,
+    "pd_your_text": 0.24372540444325902,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.026281722564951378
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.015713057246958102
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.008094125813158706
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00016339813038337406
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.0002894816735782776
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007849763719908939
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05019961744195072
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.053757051100254694
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.33031732460547847,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.05483770583092376
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.09348288234296181
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.012085456842161042
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0006799611347098118
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0027570440860876224
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.13047174690226435
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.013442146093778168
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05978790770458305
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.27124919096135175,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.045605960107359886
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01675757041262531
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.014950105954042192
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.003307098534084013
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -1.6124635808244036e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010011097823440765
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.035884425510621425
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.047800394790417686
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.2818036328233577,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.0017070668905922173
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01775112782364009
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.002339902070254078
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.004784167040337223
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -1.6124635808244036e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010959912756473735
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016442312562094434
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.05852352447532973
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.3901769278264431,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.3786896122292527
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01050778277921598
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.012855223607796437
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0031004861462963816
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -1.6124635808244036e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.00776960656055542
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.012942475893304774
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.035467789527098934
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.2870128558872052,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.027970476499796646
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.016794933150375512
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.00047059897743731226
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0015935309055887617
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -1.6124635808244036e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010031467639529038
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.035632536798613966
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.048943407839688764
+     }
+    ]
+   },
+   {
+    "profile_id": "13005551",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.506,
+    "prompt_tokens": 64,
+    "completion_tokens": 81,
+    "pd_your_text": 0.3005947861751376,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.028237035104805398
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.048003777133575135
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.0021719865145066104
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0006799611347098118
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -1.6124635808244036e-05
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.01009017116990389
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.013310248738731833
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.054693037467294425
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.42179938008974566,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.022277411535307604
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.02398476127426246
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.017683085889539436
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00042272813783882584
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.011067992380696369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.09393368986925836
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.014241187294323585
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.053064067815737165
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.3922562847074524,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.03259235871361502
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013513293868366963
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.039558871430461086
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.003736366379054175
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00010240867071668369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007263051939947574
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.0470466989686007
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.04799800574578631
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.4638068631053498,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.007441351438654841
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.012125425368525405
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.002134318756716645
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.001335654660664977
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00010240867071668369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007339763634372106
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016420441983679642
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.12384889317354593
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.4920881487299874,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.2891218660017029
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.004325234429779411
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.017225642827618636
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0016824445863869828
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00010240867071668369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.0060682483404804945
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.016178193289310173
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.029419254161077556
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.40490012545517534,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.02273026279871058
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013360332485458476
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.023503103369784457
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0028973705916225515
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00010240867071668369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007350035402877008
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.0470466989686007
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.047521800937950574
+     }
+    ]
+   },
+   {
+    "profile_id": "12806152",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.724,
+    "prompt_tokens": 71,
+    "completion_tokens": 81,
+    "pd_your_text": 0.4199961466142735,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.02245164591544641
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.013334550996651923
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.001976023346635776
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0028973705916225515
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00010240867071668369
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.007350035402877008
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.0470466989686007
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.047521800937950574
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.2646301482001879,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.03045121587475357
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.14365667288409742
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.015738575162922954
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.007049275138458187
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.01249922531744396
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.1347681901379536
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.018415000170607817
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06723607243667536
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.1637119610861097,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.077522575637834
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.0170530571904265
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.014625831404645354
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.0048934160052761895
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019588238191243834
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010089154202154385
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05294549761716948
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.060024159144397515
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.24576733923845365,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.04291450989956351
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.017507259025455222
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.010058480145044957
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.01411590003735929
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019588238191243834
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.010501733919408037
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.017877570696319938
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.16321077673620243
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.26102045648872363,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.39068711460566136
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.012944993783932738
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.010303052004230772
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.020927418376567825
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019588238191243834
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008675883746577684
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01795697327479478
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.05057908957485996
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.18120910660198525,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.022965512536099447
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.017039130589082192
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.00038173022426139775
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005971199443395894
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019588238191243834
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.01027670915216725
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05294549761716948
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.060924776968470325
+     }
+    ]
+   },
+   {
+    "profile_id": "11357887",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "medical",
+     "financial_stress": 2,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.543,
+    "prompt_tokens": 409,
+    "completion_tokens": 77,
+    "pd_your_text": 0.24416425728963226,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.04097689861342746
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.051932175324985695
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.006704880557291419
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.018259684646431372
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019588238191243834
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.13561422629589504
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01796041401159625
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06489611765361933
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.48389052642866004,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.014738862451565363
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.16472703633072477
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.011824649679864916
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005216905155343815
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.01517763237217427
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.09733239167506905
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.012735120081477223
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.0808825700020803
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.35311373871501345,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.0706372776005541
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.019402985401788496
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.01788874533729904
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.002877717204487175
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019869903563678854
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008955900475973817
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.0399944256246059
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.061433085927610986
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.4757341195235239,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.052089063613640255
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.015318696359640744
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.01191080704161851
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.010635924612723162
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019869903563678854
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.00869932673028279
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.01650461751319229
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.12553817901681094
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.45212807181859893,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.3334045225980479
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.012488374545709217
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.004447167030135075
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0174474429519317
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019869903563678854
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.005511338179660361
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.015007109206719039
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06954783235558552
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.37884105487309727,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.027112001785421953
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.019391482277537713
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.008724963271105323
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.004138829460281522
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019869903563678854
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008013481144655065
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.03974253691259844
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.0752733466384765
+     }
+    ]
+   },
+   {
+    "profile_id": "10737135",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 2,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.681,
+    "prompt_tokens": 90,
+    "completion_tokens": 81,
+    "pd_your_text": 0.4053378652851842,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.02838995023148656
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.049305809463584066
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.01198441026788669
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005216905155343815
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.00019869903563678854
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.00785619603340985
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.014608101473825758
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.07615033770661327
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "hardship",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 3,
+     "employment_stability": 1,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": true,
+     "mentions_medical_or_family_emergency": true,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.766,
+    "prompt_tokens": 445,
+    "completion_tokens": 81,
+    "pd_your_text": 0.4802915045000246,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.02137512065246091
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.08265156282841947
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.010248548672500362
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.00016786207725467581
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": 0.019775423077222444
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": 0.10273654276484201
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.019543690090990513
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06865913913099976
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "stable_plan",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.714,
+    "prompt_tokens": 464,
+    "completion_tokens": 78,
+    "pd_your_text": 0.3864885041028095,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.10309694946421673
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.014270075449775318
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.033129211643248016
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0015387722433331903
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0003158445468315112
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008822093843220172
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.05421198497404346
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06242263335015047
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "two_words",
+    "reading": {
+     "loan_purpose_category": "other",
+     "financial_stress": 0,
+     "employment_stability": 0,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 1
+    },
+    "error": null,
+    "latency_s": 1.635,
+    "prompt_tokens": 14,
+    "completion_tokens": 77,
+    "pd_your_text": 0.49247989374156514,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.0040182997980603465
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.018383203493479622
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0002642675530420707
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": -0.005526940321441337
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0003158445468315112
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008454749109801917
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.019265051666752592
+     },
+     {
+      "field": "text_quality",
+      "log_odds": 0.15142403784814448
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "business",
+    "reading": {
+     "loan_purpose_category": "business",
+     "financial_stress": 0,
+     "employment_stability": 2,
+     "mentions_other_debts": false,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.626,
+    "prompt_tokens": 32,
+    "completion_tokens": 77,
+    "pd_your_text": 0.49083644588045766,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.31418204257138554
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.010905550519408292
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.0007377537215650811
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0013944835737052523
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0003158445468315112
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.006896927917185406
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.019692865596321257
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.04895064153740794
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "stable_plan_ru",
+    "reading": {
+     "loan_purpose_category": "debt_consolidation",
+     "financial_stress": 1,
+     "employment_stability": 3,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": true,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.562,
+    "prompt_tokens": 459,
+    "completion_tokens": 81,
+    "pd_your_text": 0.42711199069128697,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": 0.024432695718976036
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": -0.01411953754396036
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": -0.011480158136611133
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0007682202565987316
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0003158445468315112
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008217917089841126
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": -0.053960096262036
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.06171630209517914
+     }
+    ]
+   },
+   {
+    "profile_id": "12478039",
+    "text_id": "original",
+    "reading": {
+     "loan_purpose_category": "credit_card",
+     "financial_stress": 2,
+     "employment_stability": 0,
+     "mentions_other_debts": true,
+     "mentions_job_loss_or_income_drop": false,
+     "mentions_medical_or_family_emergency": false,
+     "has_repayment_plan": false,
+     "text_quality": 3
+    },
+    "error": null,
+    "latency_s": 1.496,
+    "prompt_tokens": 454,
+    "completion_tokens": 78,
+    "pd_your_text": 0.4300793814743222,
+    "contributions": [
+     {
+      "field": "loan_purpose_category",
+      "log_odds": -0.07623854698943672
+     },
+     {
+      "field": "financial_stress",
+      "log_odds": 0.049145895766982986
+     },
+     {
+      "field": "employment_stability",
+      "log_odds": 0.002382279488210474
+     },
+     {
+      "field": "mentions_other_debts",
+      "log_odds": 0.0009384140639891343
+     },
+     {
+      "field": "mentions_job_loss_or_income_drop",
+      "log_odds": -0.0003158445468315112
+     },
+     {
+      "field": "mentions_medical_or_family_emergency",
+      "log_odds": -0.008665623221990371
+     },
+     {
+      "field": "has_repayment_plan",
+      "log_odds": 0.020033773694395945
+     },
+     {
+      "field": "text_quality",
+      "log_odds": -0.065681426801474
+     }
+    ]
+   }
+  ]
+ },
  "embedding_cost": {
   "model": "BAAI/bge-small-en-v1.5",
   "device": "cpu",
@@ -1912,6 +6042,6 @@
   "test_loans": 19858,
   "unique_texts": 116307,
   "n_bootstrap": 1000,
-  "tests": 88
+  "tests": 102
  }
 }

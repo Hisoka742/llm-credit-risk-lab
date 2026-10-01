@@ -3,6 +3,7 @@ import { ArrowRight } from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import { experiment, fmtInt, fmtSigned, study } from "../data/study";
 import { fieldCount } from "../lib/field";
+import { useLang } from "../lib/i18n";
 import { EASE_OUT } from "../lib/motion";
 import { HeatText } from "./HeatText";
 import { Magnetic } from "./Magnetic";
@@ -10,6 +11,8 @@ import { Magnetic } from "./Magnetic";
 // The opening voice is a real description from the study (loan 200256). Its last sentence is
 // quoted exactly as written, slip included.
 const HERO_ID = "200256";
+// The quote is evidence and stays in English. The Russian page adds this translation under it.
+const HERO_QUOTE_RU = "«Заём с фиксированным ежемесячным платежом стал бы ответом на мои молитвы».";
 
 function lastSentence(text: string): string {
   const parts = text.split(/(?<=[.!?])\s+/).filter(Boolean);
@@ -18,6 +21,7 @@ function lastSentence(text: string): string {
 
 export function Hero() {
   const reduce = useCalm();
+  const { t, ru } = useLang();
   const listing = study.listings.find((l) => l.id === HERO_ID) ?? study.listings[0];
   const quote = lastSentence(listing.desc);
   // The largest measured gain from any way of reading the text (E1, E2 or E3 against E0).
@@ -37,39 +41,65 @@ export function Hero() {
           transition: { duration: 0.7, delay, ease: EASE_OUT },
         };
 
+  const figure = diff ? (
+    <span className="tnum whitespace-nowrap font-medium text-paper">
+      {fmtSigned(diff.diff)} Gini, p = {diff.p_value_one_sided.toFixed(3)}
+    </span>
+  ) : null;
+
   return (
     <section id="top" className="relative z-10 flex min-h-[100dvh] flex-col justify-center">
       <div className="mx-auto w-full max-w-[1400px] px-5 pb-16 pt-24 md:px-10">
         <h1 className="sr-only">
-          LLM Credit Risk Lab: do borrowers' own words improve a default model?
+          {t(
+            "LLM Credit Risk Lab: do borrowers' own words improve a default model?",
+            "LLM Credit Risk Lab: улучшают ли слова самих заёмщиков модель дефолта?",
+          )}
         </h1>
 
-        <blockquote className="max-w-[18ch] font-display text-[clamp(2.6rem,7.2vw,6rem)] font-medium leading-[1.02] tracking-[-0.03em] md:max-w-[17ch]">
+        <blockquote
+          lang="en"
+          className="max-w-[18ch] font-display text-[clamp(2.6rem,7.2vw,6rem)] font-medium leading-[1.02] tracking-[-0.03em] md:max-w-[17ch]"
+        >
           <p className="[text-wrap:balance]">
             <HeatText text={quote} resolve />
           </p>
         </blockquote>
 
+        {ru && listing.id === HERO_ID && (
+          <motion.p className="mt-5 max-w-[40ch] text-lg leading-snug text-paper/80" {...fade(after)}>
+            {HERO_QUOTE_RU}
+          </motion.p>
+        )}
+
         <motion.p className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted" {...fade(after)}>
           <span>
-            A Lending Club borrower, {listing.year}. The loan was{" "}
-            {listing.defaulted ? "charged off" : "repaid"}.
+            {t(
+              `A Lending Club borrower, ${listing.year}. The loan was ${listing.defaulted ? "charged off" : "repaid"}.`,
+              `Заёмщик Lending Club, ${listing.year} год. Кредит ${listing.defaulted ? "списан как безнадёжный" : "погашен"}.`,
+            )}
           </span>
-          <span className="flex items-center gap-4" aria-label="Colour key">
+          <span className="flex flex-wrap items-center gap-x-4 gap-y-1" aria-label={t("Colour key", "Обозначения цветов")}>
             <span className="flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-warm" aria-hidden="true" />
-              word linked to default
+              {t("word linked to default", "слово связано с дефолтом")}
             </span>
             <span className="flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-cool" aria-hidden="true" />
-              linked to repayment
+              {t("linked to repayment", "связано с погашением")}
             </span>
           </span>
           <span className="basis-full">
             {dots === study.totals.loans
-              ? `Behind the text: one dot for each of the ${fmtInt(dots)} loans.`
-              : `Behind the text: a dot for ${fmtInt(dots)} of the ${fmtInt(study.totals.loans)} loans.`}{" "}
-            The red ones defaulted.
+              ? t(
+                  `Behind the text: one dot for each of the ${fmtInt(dots)} loans.`,
+                  `За текстом: по одной точке на каждый из ${fmtInt(dots)} кредитов.`,
+                )
+              : t(
+                  `Behind the text: a dot for ${fmtInt(dots)} of the ${fmtInt(study.totals.loans)} loans.`,
+                  `За текстом: точки для ${fmtInt(dots)} из ${fmtInt(study.totals.loans)} кредитов.`,
+                )}{" "}
+            {t("The red ones defaulted.", "Красные — дефолты.")}
           </span>
         </motion.p>
 
@@ -77,27 +107,29 @@ export function Hero() {
           className="mt-10 max-w-[46ch] text-lg leading-relaxed text-paper/90 md:text-xl"
           {...fade(after + 0.12)}
         >
-          {fmtInt(study.totals.loans)} borrowers explained themselves in writing. Reading it moved a
-          default model by{allDone ? " at most" : ""}{" "}
-          {diff ? (
-            <span className="tnum whitespace-nowrap font-medium text-paper">
-              {fmtSigned(diff.diff)} Gini, p = {diff.p_value_one_sided.toFixed(3)}
-            </span>
+          {ru ? (
+            <>
+              {fmtInt(study.totals.loans)} заёмщиков объяснили свою просьбу письменно. Чтение этих текстов
+              сдвинуло модель дефолта{" "}
+              {figure ? <>{allDone ? "не более чем на " : "на "}{figure}</> : "на величину, которая ещё измеряется"}.
+            </>
           ) : (
-            "an amount still being measured"
+            <>
+              {fmtInt(study.totals.loans)} borrowers explained themselves in writing. Reading it moved a
+              default model by{allDone ? " at most" : ""} {figure ?? "an amount still being measured"}.
+            </>
           )}
-          .
         </motion.p>
 
         <motion.div className="mt-9 flex flex-wrap items-center gap-3" {...fade(after + 0.24)}>
           <Magnetic>
             <a href="#results" className="btn btn-primary">
-              Read the study
+              {t("Read the study", "К результатам")}
               <ArrowRight size={18} weight="bold" aria-hidden="true" />
             </a>
           </Magnetic>
           <a href="#method" className="btn btn-ghost">
-            See the method
+            {t("See the method", "Как измеряли")}
           </a>
         </motion.div>
       </div>

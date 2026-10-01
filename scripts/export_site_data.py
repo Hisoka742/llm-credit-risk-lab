@@ -195,6 +195,9 @@ def main() -> None:
         "pilot": {"model": pilot.get("model"), "source": pilot.get("source"),
                   "cost": pilot.get("cost")},
         "llm_run": llm_run,
+        # Real runs of the live demo recorded by scripts.record_live, so the static site can
+        # show them without a server. Null until they have been recorded.
+        "live": _load(reports / "live" / "recorded.json"),
         "embedding_cost": emb_cost and {
             "model": emb_cost["model_name"], "device": emb_cost["device"],
             "mean_tokens": emb_cost["mean_tokens"],
@@ -214,7 +217,7 @@ def main() -> None:
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(study, indent=1, default=float), encoding="utf-8")
+    out.write_text(json.dumps(study, indent=1, default=float, ensure_ascii=False), encoding="utf-8")
     done = [e["id"] for e in experiments if e["status"] == "done"]
     print(f"wrote {out}: experiments done {done}, {len(listings)} listings, "
           f"{len(weights)} word weights")  # fmt: skip

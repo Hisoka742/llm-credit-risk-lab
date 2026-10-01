@@ -1,6 +1,7 @@
 import { useCalm } from "../lib/useCalm";
 import { motion } from "motion/react";
 import { experiment, fmt, fmtInt, study } from "../data/study";
+import { useLang } from "../lib/i18n";
 import { EASE_OUT } from "../lib/motion";
 import { Reveal } from "./Reveal";
 
@@ -57,35 +58,39 @@ function Phrases() {
 
 export function Words() {
   const e4 = experiment("e4");
+  const { t } = useLang();
   return (
     <section id="words" className="relative z-10 py-24 md:py-36">
       <div className="mx-auto max-w-[1400px] px-5 md:px-10">
         <Reveal>
           <h2 className="max-w-[20ch] font-display text-[clamp(2rem,4.2vw,3.5rem)] font-medium leading-[1.05] tracking-[-0.025em]">
-            The words do carry signal. Just not much that is new.
+            {t("The words do carry signal. Just not much that is new.", "Сигнал в словах есть. Но нового в нём мало.")}
           </h2>
           <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-muted">
-            A model that sees only the text reaches a Gini of{" "}
-            <span className="tnum text-paper">{e4?.gini ? fmt(e4.gini.value) : "an unknown value"}</span>.
-            Borrowers who need help with bills or fund a business default more. Those refinancing
-            cards at a better rate default less. The tabular purpose field already knows most of
-            this.
+            {t("A model that sees only the text reaches a Gini of", "Модель, которая видит только текст, достигает Gini")}{" "}
+            <span className="tnum text-paper">{e4?.gini ? fmt(e4.gini.value) : "?"}</span>.{" "}
+            {t(
+              "Borrowers who need help with bills or fund a business default more. Those refinancing cards at a better rate default less. The tabular purpose field already knows most of this.",
+              "Те, кто просит помочь со счетами или берёт деньги на бизнес, допускают дефолт чаще. Те, кто рефинансирует карты под меньшую ставку, — реже. Табличное поле «цель кредита» почти всё это уже знает.",
+            )}
           </p>
         </Reveal>
 
         <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
           <div>
-            <h3 className="mb-6 text-sm font-medium text-warm">Linked to default</h3>
+            <h3 className="mb-6 text-sm font-medium text-warm">{t("Linked to default", "Связано с дефолтом")}</h3>
             <TermList terms={study.terms.raise} tone="warm" align="right" />
           </div>
           <div>
-            <h3 className="mb-6 text-sm font-medium text-cool">Linked to repayment</h3>
+            <h3 className="mb-6 text-sm font-medium text-cool">{t("Linked to repayment", "Связано с погашением")}</h3>
             <TermList terms={study.terms.lower} tone="cool" align="left" />
           </div>
         </div>
         <p className="mt-10 max-w-[62ch] text-sm leading-relaxed text-muted">
-          Bar length is the term's weight in the text-only model. Several of the strongest terms are
-          filler words: the signal in this text is real but weak and diffuse.
+          {t(
+            "Bar length is the term's weight in the text-only model. Several of the strongest terms are filler words: the signal in this text is real but weak and diffuse.",
+            "Длина полосы — вес слова в модели, которая видит только текст. Слова приведены в оригинале. Среди самых сильных есть служебные: сигнал в тексте настоящий, но слабый и размытый.",
+          )}
         </p>
       </div>
 
@@ -93,7 +98,7 @@ export function Words() {
         <div className="mx-auto mb-8 max-w-[1400px] px-5 md:px-10">
           <Reveal>
             <h3 className="max-w-[26ch] font-display text-2xl font-medium leading-tight tracking-[-0.015em] md:text-3xl">
-              And many borrowers wrote almost nothing
+              {t("And many borrowers wrote almost nothing", "А многие заёмщики не написали почти ничего")}
             </h3>
           </Reveal>
         </div>

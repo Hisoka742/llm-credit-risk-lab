@@ -48,6 +48,35 @@ export type Listing = {
   review: { verdict: "right" | "wrong" | "debatable"; note: string } | null;
 };
 
+export type Reading = Record<string, string | number | boolean | null>;
+
+/** A real test loan offered in the live demo, with its scores and its original LLM reading. */
+export type LiveProfile = {
+  id: string;
+  desc: string;
+  issued: string;
+  grade: string;
+  int_rate: number;
+  loan_amnt: number;
+  annual_inc: number;
+  purpose: string;
+  defaulted: boolean;
+  pd_no_text: number;
+  pd_original_text: number;
+  original_reading: Reading;
+};
+
+/** One reading + score, live from the API or recorded by scripts.record_live. */
+export type LiveRun = {
+  reading: Reading | null;
+  error: string | null;
+  latency_s: number;
+  prompt_tokens: number;
+  completion_tokens: number;
+  pd_your_text: number;
+  contributions: { field: string; log_odds: number }[];
+};
+
 export type Study = {
   funnel: { step: string; rows: number }[];
   coverage_by_year: { year: number; loans: number; with_desc: number; coverage: number }[];
@@ -86,6 +115,15 @@ export type Study = {
     mean_prompt_tokens: number;
     mean_completion_tokens: number;
     gpu_seconds_per_application: number;
+  } | null;
+  live: {
+    reader: string;
+    trained_on: string;
+    recorded_on: string;
+    max_text_chars: number;
+    texts: { id: string; lang: string; text: string }[];
+    profiles: LiveProfile[];
+    runs: (LiveRun & { profile_id: string; text_id: string })[];
   } | null;
   embedding_cost: {
     model: string;
