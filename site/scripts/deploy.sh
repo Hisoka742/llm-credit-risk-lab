@@ -4,13 +4,15 @@
 #   bash site/scripts/deploy.sh
 #
 # The branch holds only the built files, as one commit that is replaced on each deploy.
-# The live demo section is hidden in this build unless VITE_API_URL is set when building.
+# VITE_API_URL is the hosted live demo API (render.yaml). Override it in the environment, or
+# set it to an empty string to publish a site that shows the recorded runs only.
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
 remote="$(git -C .. remote get-url origin)"
 source_commit="$(git -C .. rev-parse --short HEAD)"
 
+export VITE_API_URL="${VITE_API_URL-https://llm-credit-risk-lab-api.onrender.com}"
 npm run build
 touch dist/.nojekyll   # serve files as they are, without Jekyll processing
 
