@@ -145,6 +145,7 @@ def test_health_and_profiles(bundle, tmp_path) -> None:
     h = api.get("/api/health").json()
     assert h["reader"] == "reader-llm" and h["trained_on"] == "trainer-llm"
     assert [p["id"] for p in api.get("/api/profiles").json()] == ["p1", "p2"]
+    assert "/api/health" in api.get("/").json()["endpoints"]
 
 
 def test_analyze_scores_the_new_reading_and_caches_it(bundle, tmp_path) -> None:

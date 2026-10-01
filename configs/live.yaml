@@ -24,5 +24,6 @@ live:
   # true only behind a hosting platform's proxy: rate limits then use X-Forwarded-For.
   # Set by LIVE_TRUST_PROXY=true in the container.
   trust_proxy: false
+  site_url: https://hisoka742.github.io/llm-credit-risk-lab/   # shown at the API's root address
   host: 127.0.0.1
   port: 8000

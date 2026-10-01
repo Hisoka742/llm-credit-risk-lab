@@ -107,6 +107,15 @@ def create_app(
     )
     limiter = Limiter(live["rate_limit_per_minute"], live["max_requests_per_day"])
 
+    @app.get("/")
+    def root() -> dict[str, Any]:
+        # Someone opened the API address in a browser: say what this is and where the page is.
+        return {
+            "service": "LLM Credit Risk Lab: live demo API",
+            "site": live.get("site_url"),
+            "endpoints": ["/api/health", "/api/profiles", "POST /api/analyze"],
+        }
+
     @app.get("/api/health")
     def health() -> dict[str, Any]:
         return {
