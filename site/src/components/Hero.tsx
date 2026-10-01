@@ -14,8 +14,10 @@ const HERO_ID = "200256";
 // The quote is evidence and stays in English. The Russian page adds this translation under it.
 const HERO_QUOTE_RU = "«Заём с фиксированным ежемесячным платежом стал бы ответом на мои молитвы».";
 
+// No regex lookbehind here: Safari before 16.4 rejects it at parse time, which would stop the
+// whole page from loading on older iPhones.
 function lastSentence(text: string): string {
-  const parts = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const parts = (text.match(/[^.!?]+[.!?]*/g) ?? []).map((x) => x.trim()).filter(Boolean);
   return parts[parts.length - 1] ?? text;
 }
 
