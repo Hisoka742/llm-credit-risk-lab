@@ -1,0 +1,15 @@
+# The image needs configs/, src/, scripts/ and artifacts/live only. Keep secrets and data out
+# of the build context.
+.env
+.env.*
+.git
+data
+cache
+dist
+site
+reports
+notebooks
+tests
+.impeccable
+.claude
+**/__pycache__

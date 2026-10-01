@@ -11,6 +11,7 @@ to this port, so `npm run dev` in site/ shows the "Try it" section while this is
 from __future__ import annotations
 
 import argparse
+import os
 
 from src.config import load_config, load_dotenv
 from src.features.llm_extract import FatalLLMError
@@ -35,6 +36,8 @@ def main() -> None:
         cfg["live"]["model"] = args.model
     if args.base_url:
         cfg["llm"]["base_url"] = args.base_url
+    if os.environ.get("LIVE_TRUST_PROXY", "").lower() in ("1", "true", "yes"):
+        cfg["live"]["trust_proxy"] = True
     try:
         scorer, reset_auth = build_scorer(cfg)
     except FileNotFoundError as e:
@@ -45,7 +48,10 @@ def main() -> None:
     live = cfg["live"]
     print(f"[serve] {len(scorer.b.profiles)} profiles | reader {live['model']} "
           f"({live['provider']}) | model trained on {scorer.b.trained_on}")  # fmt: skip
-    uvicorn.run(create_app(cfg, scorer, reset_auth), host=live["host"], port=live["port"])
+    # Hosting platforms pass the address through the environment (HOST, PORT).
+    host = os.environ.get("HOST", live["host"])
+    port = int(os.environ.get("PORT", live["port"]))
+    uvicorn.run(create_app(cfg, scorer, reset_auth), host=host, port=port)
 
 
 if __name__ == "__main__":

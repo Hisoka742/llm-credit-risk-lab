@@ -182,7 +182,7 @@ borrower again. Only the eight text features change.
 ```bash
 pip install -e ".[live]"
 python -m scripts.run_experiment --config configs/e2.yaml   # saves reports/runs/e2/model.cbm
-python -m scripts.build_live                                # model + profiles -> data/processed/live
+python -m scripts.build_live                                # model + profiles -> artifacts/live
 python -m scripts.serve                                     # API on http://127.0.0.1:8000
 cd site && npm run dev                                      # the "Same borrower, your words" section appears
 ```
@@ -208,7 +208,13 @@ cd site && npm run dev                                      # the "Same borrower
   answers to `reports/live/recorded.json`. The public static site shows these, labelled as
   recorded, because it has no server. On the 12 original descriptions GigaChat-2-Max agrees
   with Qwen's training labels on 86 of 96 fields.
-- A site build talks to a live API only when `VITE_API_URL` points to one.
+- **Hosting the API.** [Dockerfile](Dockerfile) builds an image from `configs/`, `src/`,
+  `scripts/` and the committed bundle in `artifacts/live/` (E2 model + 12 profiles, about
+  2 MB). It needs no data. [render.yaml](render.yaml) deploys it on Render; the GigaChat key
+  is entered once in Render's dashboard and never stored in the repository. The image
+  fetches the Russian Trusted Root CA from the official portal, so TLS stays verified.
+- A site build talks to a live API only when `VITE_API_URL` points to one:
+  `VITE_API_URL=https://<service>.onrender.com bash site/scripts/deploy.sh`.
 
 ## Repo layout
 

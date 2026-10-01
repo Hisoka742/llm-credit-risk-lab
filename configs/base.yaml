@@ -8,6 +8,9 @@ paths:
   processed: data/processed/loans.parquet
   reports_dir: reports
   cache_dir: cache
+  # Live demo bundle (scripts.build_live): E2 model + 12 test-loan profiles. Small and
+  # committed, so the API can be deployed from the repository alone.
+  live_dir: artifacts/live
 
 data:
   raw_glob: "accepted_2007_to_2018*.csv*"

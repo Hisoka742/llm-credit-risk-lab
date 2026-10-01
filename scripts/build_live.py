@@ -1,7 +1,7 @@
 """Build the bundle the live demo serves: the trained E2 model and a few real borrower profiles.
 
     python -m scripts.run_experiment --config configs/e2.yaml   # writes reports/runs/e2/model.cbm
-    python -m scripts.build_live                                # -> data/processed/live/
+    python -m scripts.build_live                                # -> artifacts/live/
 
 Profiles are real *test* loans (never seen in training), picked deterministically: a spread of
 grades, both outcomes, and descriptions long enough to be worth rewriting. Each keeps its full
@@ -40,7 +40,7 @@ def pick_profiles(df: pd.DataFrame, seed: int, per_grade: int = 2) -> pd.DataFra
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     ap.add_argument("--config", default="configs/e2.yaml")
-    ap.add_argument("--out", default=None, help="default: <processed dir>/live")
+    ap.add_argument("--out", default=None, help="default: paths.live_dir")
     args = ap.parse_args()
 
     cfg = load_config(args.config)
@@ -51,7 +51,7 @@ def main() -> None:
         raise SystemExit(f"{model_path} missing. Run: python -m scripts.run_experiment "
                          f"--config {args.config}")  # fmt: skip
     processed = Path(cfg["paths"]["processed"])
-    out = Path(args.out) if args.out else processed.parent / "live"
+    out = Path(args.out) if args.out else Path(cfg["paths"]["live_dir"])
     out.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_parquet(processed)

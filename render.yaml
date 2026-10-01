@@ -1,0 +1,14 @@
+# Render blueprint for the live demo API. In Render: New > Blueprint > pick this repository.
+# The GigaChat key is asked for once in the dashboard and stored there as a secret. It is
+# never in the repository.
+services:
+  - type: web
+    name: llm-credit-risk-lab-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GIGACHAT_AUTH_KEY
+        sync: false

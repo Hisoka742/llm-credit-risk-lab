@@ -209,6 +209,23 @@ def test_rate_limit_per_client(bundle, tmp_path) -> None:
     assert codes == [200, 200, 200, 429]
 
 
+def test_rate_limit_uses_forwarded_address_only_when_proxy_is_trusted(bundle, tmp_path) -> None:
+    def codes(trust: bool) -> list[int]:
+        fake = FakeClient(json.dumps(READING))
+        s = LLMSettings(model="reader-llm", json_mode=False, transport_retries=0, backoff_s=0.0)
+        scorer = LiveScorer(bundle, s, fake, tmp_path / f"cache{trust}")
+        cfg = {"live": {**CFG["live"], "trust_proxy": trust}}
+        api = TestClient(create_app(cfg, scorer))
+        return [
+            api.post("/api/analyze", json={"profile_id": "p1", "text": f"text {i}"},
+                     headers={"X-Forwarded-For": f"203.0.113.{i}"}).status_code
+            for i in range(4)
+        ]  # fmt: skip
+
+    assert codes(trust=True) == [200, 200, 200, 200]  # four different visitors
+    assert codes(trust=False) == [200, 200, 200, 429]  # header ignored: one client
+
+
 def test_limiter_window_and_daily_budget() -> None:
     t = [0.0]
     lim = Limiter(per_minute=2, per_day=1, now=lambda: t[0])

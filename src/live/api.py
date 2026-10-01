@@ -65,7 +65,7 @@ class Limiter:
 def build_scorer(cfg: dict[str, Any]) -> tuple[LiveScorer, Callable[[], None]]:
     """Create the scorer for the configured provider. Returns (scorer, reset-auth callback)."""
     live = cfg["live"]
-    bundle = Bundle.load(Path(cfg["paths"]["processed"]).parent / "live")
+    bundle = Bundle.load(Path(cfg["paths"]["live_dir"]))
     s = LLMSettings(
         model=live["model"],
         base_url=cfg["llm"].get("base_url"),
@@ -132,6 +132,12 @@ def create_app(
         if not scorer.has_profile(req.profile_id):
             raise HTTPException(404, "Unknown profile.")
         client = request.client.host if request.client else "unknown"
+        if live.get("trust_proxy"):
+            # Behind a hosting platform's proxy every request comes from the proxy's address.
+            # The visitor's address is the first entry of X-Forwarded-For. Only trusted when
+            # configured, because a direct client could forge the header.
+            forwarded = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
+            client = forwarded or client
         if not limiter.allow(client):
             raise HTTPException(429, "Too many requests. Wait a minute and try again.")
         if not limiter.budget_left():
