@@ -5,6 +5,7 @@ import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Hook } from "./components/Hook";
 import { Limits } from "./components/Limits";
+import { Live } from "./components/Live";
 import { Method } from "./components/Method";
 import { Nav } from "./components/Nav";
 import { Results } from "./components/Results";
@@ -21,6 +22,8 @@ const SECTIONS: [string, ReactNode][] = [
   ["results", <Results key="results" />],
   ["words", <Words key="words" />],
   ["stability", <Stability key="stability" />],
+  // Renders nothing unless the live API (scripts.serve) is reachable.
+  ["live", <Live key="live" />],
   ["limits", <Limits key="limits" />],
   ["build", <Build key="build" />],
 ];

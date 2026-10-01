@@ -25,7 +25,9 @@ dependencies = [
 # Heavy / GPU-oriented extras are split out so E0 installs fast on a CPU laptop.
 embed = ["sentence-transformers>=2.6", "torch>=2.1"]
 llm = ["openai>=1.30"]
-dev = ["pytest>=8.0", "ruff>=0.5"]
+# Live demo API (scripts.serve): reads a description with an LLM and scores it.
+live = ["fastapi>=0.110", "uvicorn>=0.29", "httpx>=0.27", "openai>=1.30"]
+dev = ["pytest>=8.0", "ruff>=0.5", "fastapi>=0.110", "httpx>=0.27"]  # fastapi: tests/test_live.py
 
 [tool.setuptools.packages.find]
 include = ["src*", "scripts*"]

@@ -168,6 +168,37 @@ Add `?motion=on` to the URL to preview the animations on a machine whose OS has 
 effects turned off. Fill `site/src/content/profile.ts` with your name, repository URL and
 email to enable the repository button and the contact form.
 
+## Live demo
+
+The study is offline: every number above comes from text that was read once, in batch. The
+live demo runs the same pipeline at request time. Pick one of 12 real test loans, rewrite its
+description, and an LLM reads the new text while the trained E2 model scores the same
+borrower again. Only the eight text features change.
+
+```bash
+pip install -e ".[live]"
+python -m scripts.run_experiment --config configs/e2.yaml   # saves reports/runs/e2/model.cbm
+python -m scripts.build_live                                # model + profiles -> data/processed/live
+python -m scripts.serve                                     # API on http://127.0.0.1:8000
+cd site && npm run dev                                      # the "Same borrower, your words" section appears
+```
+
+- **Reader.** `configs/live.yaml` selects it. The default is GigaChat (`live.provider:
+  gigachat`): put `GIGACHAT_AUTH_KEY` in `.env`, and set `GIGACHAT_CA_BUNDLE` to the Russian
+  Trusted Root CA file, because Sber's endpoints are not signed by a CA in the default trust
+  store. [gigachat.py](src/live/gigachat.py) exchanges the key for a 30-minute access token
+  and refreshes it. Any OpenAI-compatible server works too:
+  `python -m scripts.serve --provider openai_compatible --base-url http://localhost:8000/v1 --model <name>`.
+- **Same code path.** The request goes through the study's own `extract_one` (schema
+  validation, one retry, disk cache) and `encode_llm`, so a live reading is encoded exactly
+  like a training row. A test checks that.
+- **What it does not show.** The E2 model learned from Qwen2.5-7B's labels. GigaChat is a
+  different annotator, so the PD change illustrates the mechanism and is not a validated
+  prediction. The study found no significant gain from these features in the first place.
+- **Abuse limits.** The endpoint spends the owner's LLM quota, so it rejects long inputs,
+  rate-limits each client and has a daily budget (`configs/live.yaml`).
+- The static site build hides the section unless `VITE_API_URL` points to a running API.
+
 ## Repo layout
 
 ```
@@ -176,7 +207,8 @@ src/data/     load, clean, target, split, prepare
 src/features/ leakage lists, tabular, embeddings, llm_extract, assemble
 src/models/   catboost_model, text_baseline (E4)
 src/eval/     metrics (bootstrap, paired bootstrap, PSI, calibration), compare, shap, plots
-scripts/      prepare_data, embed, llm_extract, run_experiment, make_report
+src/live/     gigachat (token handling), scorer, api (live demo)
+scripts/      prepare_data, embed, llm_extract, run_experiment, make_report, build_live, serve
 tests/        leakage, split/cleaning, metrics, embeddings, LLM extraction, experiments
 reports/      results.md, figures/, runs/<exp>/metrics.json
 ```

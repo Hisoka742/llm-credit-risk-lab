@@ -47,6 +47,16 @@ def load_llm_features(path: Path, ids: pd.Series) -> tuple[pd.DataFrame, list[st
         )
     llm = llm.loc[ids.to_numpy(), LLM_FIELDS + ["llm_ok"]].reset_index(drop=True)
     null_rate = float(1 - llm.pop("llm_ok").astype(bool).mean())
+    out, cats = encode_llm(llm)
+    return out, cats, null_rate
+
+
+def encode_llm(llm: pd.DataFrame) -> tuple[pd.DataFrame, list[str]]:
+    """Raw extraction columns -> model columns (`llm_` prefix). Returns (frame, categorical).
+
+    One function for training and for live scoring, so a description read at request time
+    is encoded exactly like the ones the model was trained on.
+    """
     out = pd.DataFrame(index=llm.index)
     cats = []
     for f in LLM_FIELDS:
@@ -57,7 +67,7 @@ def load_llm_features(path: Path, ids: pd.Series) -> tuple[pd.DataFrame, list[st
             cats.append(col)
         else:
             out[col] = pd.to_numeric(llm[f].astype(object), errors="coerce").astype("float64")
-    return out, cats, null_rate
+    return out, cats
 
 
 def assemble_features(

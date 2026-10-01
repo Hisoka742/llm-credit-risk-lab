@@ -8,4 +8,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   base: "./",
   plugins: [react(), tailwindcss()],
+  // The live demo API (python -m scripts.serve). Only the dev server proxies it: a production
+  // build calls VITE_API_URL, or hides the demo when that is not set.
+  server: { proxy: { "/api": "http://127.0.0.1:8000" } },
 });

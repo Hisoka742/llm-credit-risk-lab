@@ -1,0 +1,23 @@
+inherits: e2.yaml
+
+# Live demo (scripts.serve): a description is read by an LLM at request time and scored with
+# the trained E2 model. Secrets are never set here: the GigaChat key goes in .env
+# (GIGACHAT_AUTH_KEY), see src/live/gigachat.py.
+live:
+  provider: gigachat          # gigachat | openai_compatible (any /v1 server, uses llm.base_url)
+  model: GigaChat-2           # GigaChat-2 (Lite), GigaChat-2-Pro, GigaChat-2-Max
+  scope: GIGACHAT_API_PERS    # GIGACHAT_API_B2B / GIGACHAT_API_CORP for company accounts
+  # Deterministic reading. If the API rejects 0, use a small value such as 0.01.
+  temperature: 0.0
+  max_tokens: 256
+  timeout_s: 30
+  max_text_chars: 1500        # longer inputs are rejected, not truncated silently
+  # The key behind this endpoint is the owner's: cap what one visitor and all visitors can use.
+  rate_limit_per_minute: 10   # per client address
+  max_requests_per_day: 500   # across all clients, uncached reads only
+  allowed_origins:            # browsers allowed to call the API (CORS)
+    - http://localhost:5173
+    - http://127.0.0.1:5173
+    - https://hisoka742.github.io
+  host: 127.0.0.1
+  port: 8000

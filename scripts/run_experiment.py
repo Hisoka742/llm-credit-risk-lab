@@ -56,6 +56,9 @@ def _train_catboost(
         cat_cols, cfg["catboost"], cfg["seed"],
     )  # fmt: skip
     score = predict_pd(model, X, cat_cols)
+    # Kept for live scoring (scripts.build_live). Gitignored: it is reproducible from the
+    # config and seed.
+    model.save_model(str(out_dir / "model.cbm"))
     imp = pd.Series(model.get_feature_importance(), index=X.columns)
     info.update(
         n_features=X.shape[1], features=list(X.columns), categorical=cat_cols,

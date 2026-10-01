@@ -165,7 +165,7 @@
       "llm_text_quality": 0.06995825162773175
     }
   },
-  "fit_seconds": 126.2,
+  "fit_seconds": 123.9,
   "n": {
     "train": 88697,
     "val": 17145,
